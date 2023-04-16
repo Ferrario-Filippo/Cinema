@@ -1,0 +1,12 @@
+C:\Users\ffili\Desktop\Informatica\Quinta\ASP.NET\Cinema_Ferrario_Filippo\Cinema\Cinema.Helpers\bin\Debug\net7.0\Cinema.Helpers.deps.json
+C:\Users\ffili\Desktop\Informatica\Quinta\ASP.NET\Cinema_Ferrario_Filippo\Cinema\Cinema.Helpers\bin\Debug\net7.0\Cinema.Helpers.dll
+C:\Users\ffili\Desktop\Informatica\Quinta\ASP.NET\Cinema_Ferrario_Filippo\Cinema\Cinema.Helpers\bin\Debug\net7.0\Cinema.Helpers.pdb
+C:\Users\ffili\Desktop\Informatica\Quinta\ASP.NET\Cinema_Ferrario_Filippo\Cinema\Cinema.Helpers\obj\Debug\net7.0\Cinema.Helpers.csproj.AssemblyReference.cache
+C:\Users\ffili\Desktop\Informatica\Quinta\ASP.NET\Cinema_Ferrario_Filippo\Cinema\Cinema.Helpers\obj\Debug\net7.0\Cinema.Helpers.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ffili\Desktop\Informatica\Quinta\ASP.NET\Cinema_Ferrario_Filippo\Cinema\Cinema.Helpers\obj\Debug\net7.0\Cinema.Helpers.AssemblyInfoInputs.cache
+C:\Users\ffili\Desktop\Informatica\Quinta\ASP.NET\Cinema_Ferrario_Filippo\Cinema\Cinema.Helpers\obj\Debug\net7.0\Cinema.Helpers.AssemblyInfo.cs
+C:\Users\ffili\Desktop\Informatica\Quinta\ASP.NET\Cinema_Ferrario_Filippo\Cinema\Cinema.Helpers\obj\Debug\net7.0\Cinema.Helpers.csproj.CoreCompileInputs.cache
+C:\Users\ffili\Desktop\Informatica\Quinta\ASP.NET\Cinema_Ferrario_Filippo\Cinema\Cinema.Helpers\obj\Debug\net7.0\Cinema.Helpers.dll
+C:\Users\ffili\Desktop\Informatica\Quinta\ASP.NET\Cinema_Ferrario_Filippo\Cinema\Cinema.Helpers\obj\Debug\net7.0\refint\Cinema.Helpers.dll
+C:\Users\ffili\Desktop\Informatica\Quinta\ASP.NET\Cinema_Ferrario_Filippo\Cinema\Cinema.Helpers\obj\Debug\net7.0\Cinema.Helpers.pdb
+C:\Users\ffili\Desktop\Informatica\Quinta\ASP.NET\Cinema_Ferrario_Filippo\Cinema\Cinema.Helpers\obj\Debug\net7.0\ref\Cinema.Helpers.dll
