@@ -17,7 +17,7 @@ namespace Cinema.DataAccess.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("FilmVersion", "7.0.5")
+                .HasAnnotation("ProductVersion", "7.0.5")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -133,6 +133,9 @@ namespace Cinema.DataAccess.Migrations
 
                     b.Property<int>("FilmId")
                         .HasColumnType("int");
+
+                    b.Property<bool>("Is3D")
+                        .HasColumnType("bit");
 
                     b.Property<int>("RoomId")
                         .HasColumnType("int");

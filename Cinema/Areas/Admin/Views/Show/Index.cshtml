@@ -1,5 +1,5 @@
 ﻿@{
-	ViewData["Title"] = $"Elenco {nameof(Show)}";
+	ViewData["Title"] = "Elenco Proiezioni";
 }
 
 <h1>@nameof(Show)</h1>
@@ -7,11 +7,11 @@
 <div class="container p-3">
 	<div class="row pt-4">
 		<div class="col-6">
-			<h2 class="text-primary">Elenco @nameof(Show)</h2>
+			<h2 class="text-primary">Elenco Proiezioni</h2>
 		</div>
 		<div class="col-6 text-end">
-			<a asp-controller="Film" asp-action="Upsert" class="btn btn-primary">
-				<i class="bi bi-plus-circle"></i> &nbsp; Crea nuovo @nameof(Show)
+			<a asp-controller="Show" asp-action="Upsert" class="btn btn-primary">
+				<i class="bi bi-plus-circle"></i> &nbsp; Crea nuova Proiezione
 			</a>
 		</div>
 	</div>
@@ -22,7 +22,7 @@
 			<tr>
 				<th>Date e Ora</th>
 				<th>Id Sala</th>
-				<th>Id Film</th>
+				<th>Film</th>
 				<th>È in 3D</th>
 				<th></th>
 			</tr>
@@ -30,5 +30,5 @@
 	</table>
 </div>
 @section Scripts{
-	<script src="~/js/Film.js"></script>
+	<script src="~/js/shows.js"></script>
 }

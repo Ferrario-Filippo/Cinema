@@ -5,11 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Cinema</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap-icons/dist/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="~/lib/sweetalert2/dist/sweetalert2.css">
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/bootstrap.min.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Cinema.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" type="text/css" href="~/lib/DataTables/DataTables-1.13.4/css/dataTables.bootstrap5.css" />
+    <link rel="stylesheet" type="text/css" href="~/lib/DataTables/Buttons-2.3.6/css/buttons.dataTables.css" />
+    <link rel="stylesheet" type="text/css" href="~/lib/DataTables/Select-1.6.2/css/select.dataTables.css" />
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
@@ -23,13 +28,29 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="Customer" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
+                        @if (User.IsInRole(Cinema.Constants.Roles.ROLE_ADMIN))
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Amministrazione</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" asp-area="Admin" asp-controller="Film" asp-action="Index">Film</a>
+                                    <a class="dropdown-item" asp-area="Admin" asp-controller="Room" asp-action="Index">Sale</a>
+                                    <a class="dropdown-item" asp-area="Admin" asp-controller="Show" asp-action="Index">Proiezioni</a>
+                                    <a class="dropdown-item" asp-area="Admin" asp-controller="Ticket" asp-action="Index">Biglietti</a>
+                                    <a class="dropdown-item" asp-area="Admin" asp-controller="Review" asp-action="Index">Recensioni</a>
+                                    <a class="dropdown-item" asp-area="Admin" asp-controller="Hometown" asp-action="Index">Comuni</a>
+                                </div>
+                            </li>
+                        }
                     </ul>
+                    <partial name="_LoginPartial" />
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+    <div class="container min-vh-100">
+        <main role="main" class="pb-3 min-vh-100">
+            <partial name="_Notification" />
             @RenderBody()
         </main>
     </div>
@@ -41,7 +62,12 @@
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/sweetalert2/dist/sweetalert2.all.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script type="text/javascript" src="~/lib/DataTables/DataTables-1.13.4/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="~/lib/DataTables/DataTables-1.13.4/js/dataTables.bootstrap5.js"></script>
+    <script type="text/javascript" src="~/lib/DataTables/Buttons-2.3.6/js/dataTables.buttons.js"></script>
+    <script type="text/javascript" src="~/lib/DataTables/Select-1.6.2/js/dataTables.select.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

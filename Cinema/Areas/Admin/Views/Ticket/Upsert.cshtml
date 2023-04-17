@@ -1,6 +1,6 @@
 ﻿@model Cinema.Models.ViewModels.TicketViewModel
 @{
-	ViewData["Title"] = $"Crea/Modifica {nameof(Ticket)}";
+	ViewData["Title"] = "Crea/Modifica Biglietto";
 }
 
 <form method="post" asp-action="Upsert" enctype="multipart/form-data">
@@ -12,7 +12,7 @@
 			<div class="border p-3 mt-4 row">
 				<div class="row pb-2">
 					<h2 class="text-primary">
-						@(Model.Ticket.ShowId is not 0 && Model.Ticket.Number is not 0 && Model.Ticket.Lane is not '\0' ? "Modifica" : "Crea") @nameof(Ticket)
+						@(Model.Ticket.ShowId is not 0 && Model.Ticket.Number is not 0 && Model.Ticket.Lane is not '\0' ? "Modifica" : "Crea") Biglietto
 					</h2>
 					<hr />
 				</div>

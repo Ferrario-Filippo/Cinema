@@ -80,8 +80,27 @@ namespace Cinema.Areas.Admin.Controllers
 		[HttpGet]
 		public IActionResult GetAll()
 		{
-			var filmList = _unitOfWork.Films.GetAll();
-			return Json(new { data = filmList });
+			var ratings = _unitOfWork.Reviews
+				.GetAll()
+				.GroupBy(r => r.FilmId)
+				.Select(g => new { FilmId = g.Key, Rating = g.Average(r => r.Rating) });
+
+			var filmsList =
+				from film in _unitOfWork.Films.GetAll()
+				join rating in ratings on film.FilmId equals rating.FilmId into fr
+				from ratedFilms in fr.DefaultIfEmpty()
+				select new
+				{
+					film.FilmId,
+					film.Title,
+					Description = film.Description[..30],
+					film.Duration,
+					film.Genre,
+					film.Year,
+					Rating = ratedFilms?.Rating ?? 0.0
+				};
+
+			return Json(new { data = filmsList });
 		}
 
 		[HttpDelete]

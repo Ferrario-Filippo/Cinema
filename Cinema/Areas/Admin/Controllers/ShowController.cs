@@ -79,7 +79,7 @@ namespace Cinema.Areas.Admin.Controllers
 		[HttpGet]
 		public IActionResult GetAll()
 		{
-			var showsList = _unitOfWork.Shows.GetAll();
+			var showsList = _unitOfWork.Shows.GetAll("Film");
 			return Json(new { data = showsList });
 		}
 

@@ -1,17 +1,17 @@
 ﻿@{
-	ViewData["Title"] = $"Elenco {nameof(Hometown)}";
+	ViewData["Title"] = $"Elenco Comuni";
 }
 
 <h1>@nameof(Hometown)</h1>
 
-<div class="container p-3">
+<div class="container p-mid-3 mb-5">
 	<div class="row pt-4">
 		<div class="col-6">
-			<h2 class="text-primary">Elenco @nameof(Hometown)</h2>
+			<h2 class="text-primary">Elenco Comuni</h2>
 		</div>
 		<div class="col-6 text-end">
 			<a asp-controller="Hometown" asp-action="Upsert" class="btn btn-primary">
-				<i class="bi bi-plus-circle"></i> &nbsp; Crea nuovo @nameof(Hometown)
+				<i class="bi bi-plus-circle"></i> &nbsp; Crea nuovo Comune
 			</a>
 		</div>
 	</div>
@@ -27,5 +27,5 @@
 	</table>
 </div>
 @section Scripts{
-	<script src="~/js/Film.js"></script>
+	<script src="~/js/hometowns.js"></script>
 }

@@ -1,7 +1,9 @@
 using Cinema.DataAccess;
 using Cinema.DataAccess.Repository;
 using Cinema.DataAccess.Repository.Interfaces;
+using Cinema.Helpers;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -27,6 +29,8 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>()
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
+builder.Services.AddTransient<IEmailSender, EmailSender>();
+
 builder.Services.ConfigureApplicationCookie(options =>
 {
 	options.Cookie.HttpOnly = true;
@@ -36,7 +40,6 @@ builder.Services.ConfigureApplicationCookie(options =>
 	options.LogoutPath = "/Identity/Account/Logout";
 	options.AccessDeniedPath = "/Identity/Account/AccessDenied";
 });
-
 
 var app = builder.Build();
 

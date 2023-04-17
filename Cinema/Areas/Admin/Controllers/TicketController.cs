@@ -54,7 +54,7 @@ namespace Cinema.Areas.Admin.Controllers
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		[Authorize(Roles = ROLE_ADMIN)]
-		public IActionResult Upsert(TicketViewModel ticketViewModel, IFormFile? file)
+		public IActionResult Upsert(TicketViewModel ticketViewModel)
 		{
 			if (!ModelState.IsValid)
 				return View(ticketViewModel);

@@ -1,6 +1,6 @@
 ﻿@model Hometown
 @{
-	ViewData["Title"] = $"Crea/Modifica {nameof(Hometown)}";
+	ViewData["Title"] = $"Crea/Modifica Comune";
 }
 
 <form method="post" asp-action="Upsert" enctype="multipart/form-data">
@@ -9,7 +9,7 @@
 		<div class="col-10">
 			<div class="border p-3 mt-4 row">
 				<div class="row pb-2">
-					<h2 class="text-primary">@(Model.HometownId is not 0 ? "Modifica" : "Crea") @nameof(Hometown)</h2>
+					<h2 class="text-primary">@(Model.HometownId is not 0 ? "Modifica" : "Crea") Comune</h2>
 					<hr />
 				</div>
 				<div asp-validation-summary="All"></div>

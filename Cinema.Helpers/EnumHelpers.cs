@@ -24,7 +24,7 @@ namespace Cinema.Helpers
 			{ "ScienceFiction", "Fantascienza" },
 			{ "Thriller", "Thriller" },
 			{ "War", "Guerra" },
-			{ "Western", "Western" },
+			{ "Western", "Western" }
 		}.ToImmutableDictionary();
 
 		public static IEnumerable<SelectListItem> GetFilmGenres()
@@ -37,5 +37,23 @@ namespace Cinema.Helpers
 					genres[i]);
 			}
 		}
-	}
+
+        public static IImmutableDictionary<string, string> gendersITLocalization = new Dictionary<string, string>()
+        {
+            { "NonBinary", "Non binario" },
+            { "Male", "Maschio" },
+            { "Female", "Femmina" }
+        }.ToImmutableDictionary();
+
+        public static IEnumerable<SelectListItem> GetGenders()
+        {
+            var genders = Enum.GetNames(typeof(Gender));
+            for (int i = 0; i < genders.Length; i++)
+            {
+                yield return new SelectListItem(
+                    gendersITLocalization[genders[i]],
+                    genders[i]);
+            }
+        }
+    }
 }
