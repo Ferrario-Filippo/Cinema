@@ -4,19 +4,19 @@ namespace Cinema.DataAccess.Repository.Interfaces
 {
 	public interface IUnitOfWork
 	{
-		IRepository<Ticket> Biglietti { get; }
-
-		IRepository<Hometown> Comuni { get; }
+		IRepository<User> ApplicationUsers { get; }
 		
-		IRepository<Film> Film { get; }
+		IRepository<Film> Films { get; }
 		
-		IRepository<Show> Proiezioni { get; }
-
-		IRepository<Review> Recensioni { get; }
+		IRepository<Review> Reviews { get; }
 		
-		IRepository<Room> Sale { get; }
+		IRepository<Room> Rooms { get; }
+		
+		IRepository<Show> Shows { get; }
 
-		IRepository<User> Utenti { get; }
+		IRepository<Ticket> Tickets { get; }
+
+		IRepository<Hometown> Towns { get; }
 
 		void Save();
 	}

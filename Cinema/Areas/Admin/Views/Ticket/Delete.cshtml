@@ -1,0 +1,39 @@
+﻿@model Ticket
+
+@{
+	ViewData["Title"] = $"Elimina {nameof(Ticket)}";
+}
+
+<form method="post" asp-action="Delete">
+	<input asp-for="ShowId" hidden />
+	<input asp-for="Number" hidden />
+	<input asp-for="Lane" hidden />
+	<div class="border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 class="text-primary">Elimina @nameof(Ticket)</h2>
+			<hr />
+		</div>
+		<div class="mb-3">
+			<label asp-for="ShowId"></label>
+			<input asp-for="ShowId" disabled class="form-control" />
+		</div>
+		<div class="mb-3">
+			<label asp-for="Number"></label>
+			<input asp-for="Number" disabled class="form-control" />
+		</div>
+		<div class="mb-3">
+			<label asp-for="Lane"></label>
+			<input asp-for="Lane" disabled class="form-control" />
+		</div>
+		<button type="submit" class="btn btn-danger" style="width:150px">Elimina</button>
+		<a asp-controller="Ticket" asp-action="Index" class="btn btn-secondary" style="width:150px">
+			Indietro
+		</a>
+	</div>
+</form>
+
+@section Scripts{
+	@{
+		<partial name="_ValidationScriptsPartial" />
+	}
+}

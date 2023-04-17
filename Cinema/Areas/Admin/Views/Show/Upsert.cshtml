@@ -1,0 +1,62 @@
+﻿@model Cinema.Models.ViewModels.ShowViewModel
+@{
+	ViewData["Title"] = $"Crea/Modifica {nameof(Show)}";
+}
+
+<form method="post" asp-action="Upsert" enctype="multipart/form-data">
+	<input asp-for="Show.ShowId" hidden />
+	<div class="row">
+		<div class="col-10">
+			<div class="border p-3 mt-4 row">
+				<div class="row pb-2">
+					<h2 class="text-primary">@(Model.Show.ShowId is not 0 ? "Modifica" : "Crea") @nameof(Show)</h2>
+					<hr />
+				</div>
+				<div asp-validation-summary="All"></div>
+				<div class="row mb-3">
+					<label asp-for="Show.Time"></label>
+					<input asp-for="Show.Time" class="form-cotrol" />
+					<span asp-validation-for="Show.Time" class="text-danger"></span>
+				</div>
+				<div class="row mb-3 col-6 ms-2">
+					<label asp-for="Show.RoomId"></label>
+					<select asp-for="Show.RoomId" class="form-select" asp-items="@Model.Rooms">
+						<option disabled selected>--Seleziona la sala--</option>
+					</select>
+					<span asp-validation-for="Show.RoomId" class="text-danger"></span>
+				</div>
+				<div class="row mb-3 col-6 ms-2">
+					<label asp-for="Show.FilmId"></label>
+					<select asp-for="Show.FilmId" class="form-select" asp-items="@Model.Films">
+						<option disabled selected>--Seleziona il film--</option>
+					</select>
+					<span asp-validation-for="Show.FilmId" class="text-danger"></span>
+				</div>
+				<div class="row mb-3" hidden>
+					<label asp-for="Show.Is3D"></label>
+					<input asp-for="Show.Is3D" class="form-cotrol" />
+					<span asp-validation-for="Show.Is3D" class="text-danger"></span>
+				</div>
+				<div class="col-12">
+					@if (Model.Show.ShowId is not 0)
+					{
+						<button type="submit" class="btn btn-primary" style="width:150px">Modifica</button>
+					}
+					else
+					{
+						<button type="submit" class="btn btn-primary" style="width:150px">Crea</button>
+					}
+					<a asp-controller="Show" asp-action="Index" class="btn btn-secondary" style="width:150px">
+						Indietro
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
+
+<section Scripts>
+	@{
+		<partial name="_ValidationScriptsPartial" />
+	}
+</section>

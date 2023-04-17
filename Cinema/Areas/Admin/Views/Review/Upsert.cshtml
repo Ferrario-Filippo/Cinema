@@ -1,0 +1,57 @@
+﻿@model Cinema.Models.ViewModels.ReviewViewModel
+@{
+	ViewData["Title"] = $"Crea/Modifica {nameof(Review)}";
+}
+
+<form method="post" asp-action="Upsert" enctype="multipart/form-data">
+	<input asp-for="Review.ReviewId" hidden />
+	<div class="row">
+		<div class="col-10">
+			<div class="border p-3 mt-4 row">
+				<div class="row pb-2">
+					<h2 class="text-primary">@(Model.Review.ReviewId is not 0 ? "Modifica" : "Crea") @nameof(Review)</h2>
+					<hr />
+				</div>
+				<div asp-validation-summary="All"></div>
+				<div class="row mb-3 col-6 ms-2">
+					<label asp-for="Review.UserId"></label>
+					<select asp-for="Review.UserId" class="form-select" asp-items="@Model.Users">
+						<option disabled selected>--Seleziona il genere--</option>
+					</select>
+					<span asp-validation-for="Review.UserId" class="text-danger"></span>
+				</div>
+				<div class="row mb-3 col-6 ms-2">
+					<label asp-for="Review.FilmId"></label>
+					<select asp-for="Review.FilmId" class="form-select" asp-items="@Model.Films">
+						<option disabled selected>--Seleziona il film--</option>
+					</select>
+					<span asp-validation-for="Review.FilmId" class="text-danger"></span>
+				</div>
+				<div class="row mb-3">
+					<label asp-for="Review.Rating"></label>
+					<input asp-for="Review.Rating" class="form-cotrol" />
+					<span asp-validation-for="Review.Rating" class="text-danger"></span>
+				</div>
+				<div class="col-12">
+					@if (Model.Review.ReviewId is not 0)
+					{
+						<button type="submit" class="btn btn-primary" style="width:150px">Modifica</button>
+					}
+					else
+					{
+						<button type="submit" class="btn btn-primary" style="width:150px">Crea</button>
+					}
+					<a asp-controller="Review" asp-action="Index" class="btn btn-secondary" style="width:150px">
+						Indietro
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
+
+<section Scripts>
+	@{
+		<partial name="_ValidationScriptsPartial" />
+	}
+</section>

@@ -27,12 +27,12 @@ namespace Cinema.Models
 		[Required]
 		[Range(10, 300)]
 		[Display(Name = "Durata")]
-		public ushort Duration { get; set; }
+		public ushort Duration { get; set; } = 120;
 
 		[Required]
 		[Range(1849, 2030)]
 		[Display(Name = "Anno di produzione")]
-		public ushort Year { get; set; }
+		public ushort Year { get; set; } = (ushort)DateTime.Now.Year;
 
 		[MaxLength(250)]
 		[Display(Name = "Url immagine copertina")]

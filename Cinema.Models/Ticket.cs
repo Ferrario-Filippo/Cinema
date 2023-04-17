@@ -13,7 +13,7 @@ namespace Cinema.Models
 
 		[Required]
 		[Display(Name = "Fila")]
-		public char Lane { get; set; }
+		public char Lane { get; set; } = '\0';
 
 		[Required]
 		[Range(1.00, 39.99)]

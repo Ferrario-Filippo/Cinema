@@ -1,0 +1,33 @@
+﻿@model Review
+
+@{
+	ViewData["Title"] = $"Elimina {nameof(Review)}";
+}
+
+<form method="post" asp-action="Delete">
+	<input asp-for="ReviewId" hidden />
+	<div class="border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 class="text-primary">Elimina @nameof(Review)</h2>
+			<hr />
+		</div>
+		<div class="mb-3">
+			<label asp-for="UserId"></label>
+			<input asp-for="UserId" disabled class="form-control" />
+		</div>
+		<div class="mb-3">
+			<label asp-for="FilmId"></label>
+			<input asp-for="FilmId" disabled class="form-control" />
+		</div>
+		<button type="submit" class="btn btn-danger" style="width:150px">Elimina</button>
+		<a asp-controller="Review" asp-action="Index" class="btn btn-secondary" style="width:150px">
+			Indietro
+		</a>
+	</div>
+</form>
+
+@section Scripts{
+	@{
+		<partial name="_ValidationScriptsPartial" />
+	}
+}

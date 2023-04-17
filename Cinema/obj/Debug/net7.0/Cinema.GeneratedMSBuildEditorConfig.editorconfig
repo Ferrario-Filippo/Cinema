@@ -16,6 +16,102 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = C:\Users\ffili\Desktop\Informatica\Quinta\ASP.NET\Cinema_Ferrario_Filippo\Cinema\Cinema
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/ffili/Desktop/Informatica/Quinta/ASP.NET/Cinema_Ferrario_Filippo/Cinema/Cinema/Areas/Admin/Views/Film/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRmlsbVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ffili/Desktop/Informatica/Quinta/ASP.NET/Cinema_Ferrario_Filippo/Cinema/Cinema/Areas/Admin/Views/Film/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRmlsbVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ffili/Desktop/Informatica/Quinta/ASP.NET/Cinema_Ferrario_Filippo/Cinema/Cinema/Areas/Admin/Views/Film/Upsert.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRmlsbVxVcHNlcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ffili/Desktop/Informatica/Quinta/ASP.NET/Cinema_Ferrario_Filippo/Cinema/Cinema/Areas/Admin/Views/Hometown/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZXRvd25cRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ffili/Desktop/Informatica/Quinta/ASP.NET/Cinema_Ferrario_Filippo/Cinema/Cinema/Areas/Admin/Views/Hometown/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZXRvd25cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ffili/Desktop/Informatica/Quinta/ASP.NET/Cinema_Ferrario_Filippo/Cinema/Cinema/Areas/Admin/Views/Hometown/Upsert.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZXRvd25cVXBzZXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ffili/Desktop/Informatica/Quinta/ASP.NET/Cinema_Ferrario_Filippo/Cinema/Cinema/Areas/Admin/Views/Review/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUmV2aWV3XERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ffili/Desktop/Informatica/Quinta/ASP.NET/Cinema_Ferrario_Filippo/Cinema/Cinema/Areas/Admin/Views/Review/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUmV2aWV3XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ffili/Desktop/Informatica/Quinta/ASP.NET/Cinema_Ferrario_Filippo/Cinema/Cinema/Areas/Admin/Views/Review/Upsert.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUmV2aWV3XFVwc2VydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ffili/Desktop/Informatica/Quinta/ASP.NET/Cinema_Ferrario_Filippo/Cinema/Cinema/Areas/Admin/Views/Room/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUm9vbVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ffili/Desktop/Informatica/Quinta/ASP.NET/Cinema_Ferrario_Filippo/Cinema/Cinema/Areas/Admin/Views/Room/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUm9vbVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ffili/Desktop/Informatica/Quinta/ASP.NET/Cinema_Ferrario_Filippo/Cinema/Cinema/Areas/Admin/Views/Room/Upsert.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUm9vbVxVcHNlcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ffili/Desktop/Informatica/Quinta/ASP.NET/Cinema_Ferrario_Filippo/Cinema/Cinema/Areas/Admin/Views/Show/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hvd1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ffili/Desktop/Informatica/Quinta/ASP.NET/Cinema_Ferrario_Filippo/Cinema/Cinema/Areas/Admin/Views/Show/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hvd1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ffili/Desktop/Informatica/Quinta/ASP.NET/Cinema_Ferrario_Filippo/Cinema/Cinema/Areas/Admin/Views/Show/Upsert.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hvd1xVcHNlcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ffili/Desktop/Informatica/Quinta/ASP.NET/Cinema_Ferrario_Filippo/Cinema/Cinema/Areas/Admin/Views/Ticket/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVGlja2V0XERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ffili/Desktop/Informatica/Quinta/ASP.NET/Cinema_Ferrario_Filippo/Cinema/Cinema/Areas/Admin/Views/Ticket/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVGlja2V0XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ffili/Desktop/Informatica/Quinta/ASP.NET/Cinema_Ferrario_Filippo/Cinema/Cinema/Areas/Admin/Views/Ticket/Upsert.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVGlja2V0XFVwc2VydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ffili/Desktop/Informatica/Quinta/ASP.NET/Cinema_Ferrario_Filippo/Cinema/Cinema/Areas/Admin/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ffili/Desktop/Informatica/Quinta/ASP.NET/Cinema_Ferrario_Filippo/Cinema/Cinema/Areas/Admin/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ffili/Desktop/Informatica/Quinta/ASP.NET/Cinema_Ferrario_Filippo/Cinema/Cinema/Areas/Customer/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ffili/Desktop/Informatica/Quinta/ASP.NET/Cinema_Ferrario_Filippo/Cinema/Cinema/Areas/Customer/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ffili/Desktop/Informatica/Quinta/ASP.NET/Cinema_Ferrario_Filippo/Cinema/Cinema/Areas/Customer/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ffili/Desktop/Informatica/Quinta/ASP.NET/Cinema_Ferrario_Filippo/Cinema/Cinema/Areas/Customer/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/ffili/Desktop/Informatica/Quinta/ASP.NET/Cinema_Ferrario_Filippo/Cinema/Cinema/Areas/Identity/Pages/Account/AccessDenied.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -174,14 +270,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/ffili/Desktop/Informatica/Quinta/ASP.NET/Cinema_Ferrario_Filippo/Cinema/Cinema/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/ffili/Desktop/Informatica/Quinta/ASP.NET/Cinema_Ferrario_Filippo/Cinema/Cinema/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/ffili/Desktop/Informatica/Quinta/ASP.NET/Cinema_Ferrario_Filippo/Cinema/Cinema/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/ffili/Desktop/Informatica/Quinta/ASP.NET/Cinema_Ferrario_Filippo/Cinema/Cinema/Views/Shared/Error.cshtml]

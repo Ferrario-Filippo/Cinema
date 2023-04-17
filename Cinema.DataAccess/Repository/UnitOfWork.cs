@@ -7,31 +7,31 @@ namespace Cinema.DataAccess.Repository
 	{
 		private readonly CinemaDbContext _db;
 
-		public IRepository<Ticket> Biglietti { get; init; }
+		public IRepository<User> ApplicationUsers { get; init; }
 		
-		public IRepository<Hometown> Comuni { get; init; }
-
-		public IRepository<Film> Film { get; init; }
+		public IRepository<Film> Films { get; init; }
 		
-		public IRepository<Show> Proiezioni { get; init; }
+		public IRepository<Review> Reviews { get; init; }
 		
-		public IRepository<Room> Sale { get; init; }
+		public IRepository<Room> Rooms { get; init; }
 		
-		public IRepository<Review> Recensioni { get; init; }
+		public IRepository<Show> Shows { get; init; }
 		
-		public IRepository<User> Utenti { get; init; }
+		public IRepository<Ticket> Tickets { get; init; }
+		
+		public IRepository<Hometown> Towns { get; init; }		
 
 		public UnitOfWork(CinemaDbContext db)
 		{
 			_db = db;
 
-			Biglietti = new BigliettiRepository(db);
-			Comuni = new ComuniRepository(db);
-			Film = new FilmRepository(db);
-			Proiezioni = new ProiezioniRepository(db);
-			Recensioni = new RecensioniRepository(db);
-			Sale = new SaleRepository(db);
-			Utenti = new UtentiRepository(db);
+			ApplicationUsers = new UsersRepository(db);
+			Films = new FilmsRepository(db);
+			Shows = new ShowsRepository(db);
+			Reviews = new ReviewsRepository(db);
+			Rooms = new RoomsRepository(db);
+			Tickets = new TicketsRepository(db);
+			Towns = new TownsRepository(db);
 		}
 
 		public void Save()

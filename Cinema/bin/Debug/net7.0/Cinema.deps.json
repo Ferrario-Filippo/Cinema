@@ -36,6 +36,7 @@
       "Cinema/1.0.0": {
         "dependencies": {
           "Cinema.DataAccess": "1.0.0",
+          "Cinema.Helpers": "1.0.0",
           "Cinema.Models": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "7.0.5",
           "Microsoft.AspNetCore.Identity.UI": "7.0.5",
@@ -2963,6 +2964,17 @@
         },
         "compile": {
           "Cinema.DataAccess.dll": {}
+        }
+      },
+      "Cinema.Helpers/1.0.0": {
+        "dependencies": {
+          "Cinema.Models": "1.0.0"
+        },
+        "runtime": {
+          "Cinema.Helpers.dll": {}
+        },
+        "compile": {
+          "Cinema.Helpers.dll": {}
         }
       },
       "Cinema.Models/1.0.0": {
@@ -6097,6 +6109,11 @@
       "hashPath": "system.xml.xdocument.4.3.0.nupkg.sha512"
     },
     "Cinema.DataAccess/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Cinema.Helpers/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

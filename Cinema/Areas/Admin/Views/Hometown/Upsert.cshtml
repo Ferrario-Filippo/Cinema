@@ -1,0 +1,43 @@
+﻿@model Hometown
+@{
+	ViewData["Title"] = $"Crea/Modifica {nameof(Hometown)}";
+}
+
+<form method="post" asp-action="Upsert" enctype="multipart/form-data">
+	<input asp-for="HometownId" hidden />
+	<div class="row">
+		<div class="col-10">
+			<div class="border p-3 mt-4 row">
+				<div class="row pb-2">
+					<h2 class="text-primary">@(Model.HometownId is not 0 ? "Modifica" : "Crea") @nameof(Hometown)</h2>
+					<hr />
+				</div>
+				<div asp-validation-summary="All"></div>
+				<div class="row mb-3">
+					<label asp-for="Name"></label>
+					<input asp-for="Name" class="form-cotrol" />
+					<span asp-validation-for="Name" class="text-danger"></span>
+				</div>
+				<div class="col-12">
+					@if (Model.HometownId is not 0)
+					{
+						<button type="submit" class="btn btn-primary" style="width:150px">Modifica</button>
+					}
+					else
+					{
+						<button type="submit" class="btn btn-primary" style="width:150px">Crea</button>
+					}
+					<a asp-controller="Hometown" asp-action="Index" class="btn btn-secondary" style="width:150px">
+						Indietro
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
+
+<section Scripts>
+	@{
+		<partial name="_ValidationScriptsPartial" />
+	}
+</section>

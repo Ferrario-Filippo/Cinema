@@ -1,0 +1,64 @@
+﻿@model Cinema.Models.ViewModels.TicketViewModel
+@{
+	ViewData["Title"] = $"Crea/Modifica {nameof(Ticket)}";
+}
+
+<form method="post" asp-action="Upsert" enctype="multipart/form-data">
+	<input asp-for="Ticket.ShowId" hidden />
+	<input asp-for="Ticket.Number" hidden />
+	<input asp-for="Ticket.Lane" hidden />
+	<div class="row">
+		<div class="col-10">
+			<div class="border p-3 mt-4 row">
+				<div class="row pb-2">
+					<h2 class="text-primary">
+						@(Model.Ticket.ShowId is not 0 && Model.Ticket.Number is not 0 && Model.Ticket.Lane is not '\0' ? "Modifica" : "Crea") @nameof(Ticket)
+					</h2>
+					<hr />
+				</div>
+				<div asp-validation-summary="All"></div>
+				<div class="row mb-3">
+					<label asp-for="Ticket.Number"></label>
+					<input asp-for="Ticket.Number" class="form-cotrol" />
+					<span asp-validation-for="Ticket.Number" class="text-danger"></span>
+				</div>
+				<div class="row mb-3">
+					<label asp-for="Ticket.Lane"></label>
+					<textarea asp-for="Ticket.Lane" rows="3" class="form-cotrol"></textarea>
+					<span asp-validation-for="Ticket.Lane" class="text-danger"></span>
+				</div>
+				<div class="row mb-3 col-6">
+					<label asp-for="Ticket.Cost"></label>
+					<input asp-for="Ticket.Cost" class="form-cotrol" />
+					<span asp-validation-for="Ticket.Cost" class="text-danger"></span>
+				</div>
+				<div class="row mb-3 col-6 ms-2">
+					<label asp-for="Ticket.ShowId"></label>
+					<select asp-for="Ticket.ShowId" class="form-select" asp-items="@Model.Shows">
+						<option disabled selected>--Seleziona la proiezione--</option>
+					</select>
+					<span asp-validation-for="Ticket.ShowId" class="text-danger"></span>
+				</div>
+				<div class="col-12">
+					@if (Model.Ticket.ShowId is not 0 || Model.Ticket.Number is not 0 || Model.Ticket.Lane is not '\0')
+					{
+						<button type="submit" class="btn btn-primary" style="width:150px">Modifica</button>
+					}
+					else
+					{
+						<button type="submit" class="btn btn-primary" style="width:150px">Crea</button>
+					}
+					<a asp-controller="Ticket" asp-action="Index" class="btn btn-secondary" style="width:150px">
+						Indietro
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
+
+<section Scripts>
+	@{
+		<partial name="_ValidationScriptsPartial" />
+	}
+</section>

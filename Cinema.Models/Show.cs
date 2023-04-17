@@ -14,6 +14,10 @@ namespace Cinema.Models
 		public DateTime Time { get; set; }
 
 		[Required]
+		[Display(Name = "È in 3D")]
+		public bool Is3D { get; set; }
+
+		[Required]
 		[Display(Name = "Film")]
 		public int FilmId { get; set; }
 

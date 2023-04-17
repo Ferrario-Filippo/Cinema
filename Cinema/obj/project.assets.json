@@ -3869,6 +3869,19 @@
           "bin/placeholder/Cinema.DataAccess.dll": {}
         }
       },
+      "Cinema.Helpers/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Cinema.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Cinema.Helpers.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Cinema.Helpers.dll": {}
+        }
+      },
       "Cinema.Models/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -11121,6 +11134,11 @@
       "path": "../Cinema.DataAccess/Cinema.DataAccess.csproj",
       "msbuildProject": "../Cinema.DataAccess/Cinema.DataAccess.csproj"
     },
+    "Cinema.Helpers/1.0.0": {
+      "type": "project",
+      "path": "../Cinema.Helpers/Cinema.Helpers.csproj",
+      "msbuildProject": "../Cinema.Helpers/Cinema.Helpers.csproj"
+    },
     "Cinema.Models/1.0.0": {
       "type": "project",
       "path": "../Cinema.Models/Cinema.Models.csproj",
@@ -11130,6 +11148,7 @@
   "projectFileDependencyGroups": {
     "net7.0": [
       "Cinema.DataAccess >= 1.0.0",
+      "Cinema.Helpers >= 1.0.0",
       "Cinema.Models >= 1.0.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 7.0.5",
       "Microsoft.AspNetCore.Identity.UI >= 7.0.5",
@@ -11177,6 +11196,9 @@
           "projectReferences": {
             "C:\\Users\\ffili\\Desktop\\Informatica\\Quinta\\ASP.NET\\Cinema_Ferrario_Filippo\\Cinema\\Cinema.DataAccess\\Cinema.DataAccess.csproj": {
               "projectPath": "C:\\Users\\ffili\\Desktop\\Informatica\\Quinta\\ASP.NET\\Cinema_Ferrario_Filippo\\Cinema\\Cinema.DataAccess\\Cinema.DataAccess.csproj"
+            },
+            "C:\\Users\\ffili\\Desktop\\Informatica\\Quinta\\ASP.NET\\Cinema_Ferrario_Filippo\\Cinema\\Cinema.Helpers\\Cinema.Helpers.csproj": {
+              "projectPath": "C:\\Users\\ffili\\Desktop\\Informatica\\Quinta\\ASP.NET\\Cinema_Ferrario_Filippo\\Cinema\\Cinema.Helpers\\Cinema.Helpers.csproj"
             },
             "C:\\Users\\ffili\\Desktop\\Informatica\\Quinta\\ASP.NET\\Cinema_Ferrario_Filippo\\Cinema\\Cinema.Models\\Cinema.Models.csproj": {
               "projectPath": "C:\\Users\\ffili\\Desktop\\Informatica\\Quinta\\ASP.NET\\Cinema_Ferrario_Filippo\\Cinema\\Cinema.Models\\Cinema.Models.csproj"
