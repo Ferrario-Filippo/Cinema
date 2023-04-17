@@ -13,8 +13,8 @@ function loadDataTable() {
 			url: "/Admin/Room/GetAll"
 		},
 		columns: [
-			{ data: "id", width: "15%" },
-			{ data: "hasisense", width: "15%" },
+			{ data: "roomId", width: "15%" },
+			{ data: "hasISense", width: "15%" },
 			{ data: "seats", width: "15%" },
 			{
 				data: "roomId",

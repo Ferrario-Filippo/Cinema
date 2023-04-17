@@ -13,7 +13,7 @@ function loadDataTable() {
 			url: "/Admin/Review/GetAll"
 		},
 		columns: [
-			{ data: "rating", width: "15%" },
+			{ data: "Rating", width: "15%" },
 			{ data: "user", width: "15%" },
 			{ data: "film", width: "15%" },
 			{

@@ -35,6 +35,11 @@ namespace Cinema.DataAccess
 				.WithMany(s => s.Tickets)
 				.HasForeignKey(t => t.ShowId);
 
+			builder.Entity<Ticket>()
+				.HasOne(t => t.User)
+				.WithMany(u => u.Tickets)
+				.HasForeignKey(t => t.UserId);
+
 			builder.Entity<Show>()
 				.HasOne(s => s.Film)
 				.WithMany(f => f.Shows)

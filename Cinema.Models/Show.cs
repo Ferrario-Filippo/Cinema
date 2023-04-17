@@ -11,7 +11,7 @@ namespace Cinema.Models
 
 		[Required]
 		[Display(Name = "Data e ora")]
-		public DateTime Time { get; set; }
+		public DateTime Time { get; set; } = DateTime.Now;
 
 		[Required]
 		[Display(Name = "È in 3D")]

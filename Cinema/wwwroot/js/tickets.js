@@ -17,15 +17,15 @@ function loadDataTable() {
 			{ data: "lane", width: "10%" },
 			{ data: "showId", width: "20%" },
 			{ data: "cost", width: "20%" },
-			{ data: "userid", width: "10%" },
+			{ data: "userId", width: "10%" },
 			{
-				data: { "showId", "number", "lane" },
+				data: { showId: "showId", number: "number", lane: "lane" },
 				render: function (data) {
 					return `
 						<div class="w-75 btn-group" role="group">
 						<a href="/Admin/Ticket/Upsert?showId=${data.showId}&number=${data.number}&lane=${data.lane}" class="btn btn-primary mx-2">
 							<i class="bi bi-pencil-square"></i>Modifica</a>
-						<a onClick=Delete("/Admin/Ticket/Delete?showId=${data.id}&number=${data.number}&lane=${data.lane}") class="btn btn-danger mx-2">
+						<a onClick=Delete("/Admin/Ticket/Delete?showId=${data.showId}&number=${data.number}&lane=${data.lane}") class="btn btn-danger mx-2">
 							<i class="bi bi-trash-fill"></i>Elimina</a>
 						</div>
 					`

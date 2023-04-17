@@ -1,4 +1,5 @@
 ﻿using Cinema.DataAccess.Repository.Interfaces;
+using Cinema.Helpers;
 using Cinema.Models;
 using Cinema.Models.ViewModels;
 using Microsoft.AspNetCore.Authorization;
@@ -62,6 +63,12 @@ namespace Cinema.Areas.Admin.Controllers
 			if (showViewModel.Show.ShowId is 0)
 			{
 				_unitOfWork.Shows.Add(showViewModel.Show);
+				_unitOfWork.Save();
+
+				var associatedRoom = _unitOfWork.Rooms.GetFirstOrDefault(r => r.RoomId == showViewModel.Show.RoomId);
+				foreach (var ticket in TicketHelpers.CreateTicketsForShow(showViewModel.Show, associatedRoom!))
+					_unitOfWork.Tickets.Add(ticket);
+
 				TempData["success"] = CREATE_SUCCESS;
 			}
 			else
@@ -90,7 +97,7 @@ namespace Cinema.Areas.Admin.Controllers
 			if (id is null || id is 0)
 				return NotFound();
 
-			if (_unitOfWork.Shows.GetFirstOrDefault(s => s.FilmId == id) is not Show show)
+			if (_unitOfWork.Shows.GetFirstOrDefault(s => s.ShowId == id) is not Show show)
 				return Json(new { success = false, message = DELETE_FAIL });
 
 			_unitOfWork.Shows.Remove(show);

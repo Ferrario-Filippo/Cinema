@@ -29,7 +29,7 @@ namespace Cinema.Models
 
 		[MaxLength(450)]
 		[Display(Name = "User")]
-		public string? UserId { get; set; } = string.Empty;
+		public string? UserId { get; set; } = null;
 		
 		[ValidateNever]
 		public User? User { get; set;}
