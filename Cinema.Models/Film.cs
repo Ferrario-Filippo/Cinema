@@ -1,4 +1,5 @@
-﻿using Cinema.Models.Enums;
+﻿using Cinema.Helpers.Constants;
+using Cinema.Models.Enums;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
@@ -30,7 +31,7 @@ namespace Cinema.Models
 		public ushort Duration { get; set; } = 120;
 
 		[Required]
-		[Range(1849, 2030)]
+		[Range(Time.MIN_YEAR, Time.MAX_YEAR)]
 		[Display(Name = "Anno di produzione")]
 		public ushort Year { get; set; } = (ushort)DateTime.Now.Year;
 

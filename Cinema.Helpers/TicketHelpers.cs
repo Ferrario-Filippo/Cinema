@@ -15,7 +15,6 @@ namespace Cinema.Helpers
 		public static IEnumerable<Ticket> CreateTicketsForShow(Show show, Room associatedRoom)
 		{
 			var remainingSeats = associatedRoom.Seats;
-			var cost = BASE_TICKET_COST + (show.Is3D ? 2 : 0);
 
 			for (var lane = 0; remainingSeats > 0; lane++)
 			{
@@ -23,7 +22,7 @@ namespace Cinema.Helpers
 				{
 					yield return new()
 					{
-						Cost = cost,
+						Cost = BASE_TICKET_COST + (show.Is3D && lane > 4 ? 2 : 0),
 						ShowId = show.ShowId,
 						Lane = (char)(A_ASCII + lane),
 						Number = number

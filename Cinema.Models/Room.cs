@@ -18,7 +18,7 @@ namespace Cinema.Models
 		[Required]
 		[Display(Name = "Posti")]
 		[Range(0, ushort.MaxValue)]
-		public ushort Seats { get; set; } = 0;
+		public ushort Seats { get; set; } = 100;
 
 		[JsonIgnore]
 		[ValidateNever]

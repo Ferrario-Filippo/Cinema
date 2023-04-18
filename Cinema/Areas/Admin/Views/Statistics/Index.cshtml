@@ -1,0 +1,41 @@
+﻿@{
+	ViewData["Title"] = "Statistiche";
+}
+
+<h1>Statistiche</h1>
+
+<div class="container">
+	<div class="d-flex flex-row">
+		<input type="date" id="dateFilter" class="form-control" value="@DateTime.Now" />
+		<input type="button" onclick="updateTables()" value="Vai" class="mx-1 btn btn-primary"/>
+	</div>
+
+	<div class="d-flex flex-lg-row flex-column mt-3">
+		<div class="col-lg-5">
+			<table id="revenuesTbl" class="table table-striped table-bordered">
+				<thead>
+					<tr>
+						<th>Id Film</th>
+						<th>Titolo</th>
+						<th>Incasso</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+		<div class="col-lg-1"></div>
+		<div class="col-lg-6 mt-lg-0 mt-3">
+			<table id="bookingsTbl" class="table table-striped table-bordered">
+				<thead>
+					<tr>
+						<th>Id Proiezione</th>
+						<th>Prenotazioni</th>
+						<th>Totale</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+	</div>
+</div>
+@section Scripts{
+	<script src="~/js/statistics.js"></script>
+}

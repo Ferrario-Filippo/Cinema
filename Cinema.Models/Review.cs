@@ -12,7 +12,7 @@ namespace Cinema.Models
 		[Required]
 		[Range(1, 5)]
 		[Display(Name = "Valutazione")]
-		public byte Rating { get; set; }
+		public byte Rating { get; set; } = 1;
 
 		[Required]
 		[MaxLength(450)]
