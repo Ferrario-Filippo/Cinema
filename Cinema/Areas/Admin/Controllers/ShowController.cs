@@ -12,7 +12,7 @@ using static Cinema.Constants.Roles;
 namespace Cinema.Areas.Admin.Controllers
 {
 	[Area(ADMIN)]
-	public class ShowController : Controller
+	public sealed class ShowController : Controller
 	{
 		private readonly IUnitOfWork _unitOfWork;
 
@@ -86,7 +86,7 @@ namespace Cinema.Areas.Admin.Controllers
 		[HttpGet]
 		public IActionResult GetAll()
 		{
-			var showsList = _unitOfWork.Shows.GetAll("Film");
+			var showsList = _unitOfWork.Shows.GetAll(includeProperties: "Film");
 			return Json(new { data = showsList });
 		}
 

@@ -9,7 +9,7 @@ namespace Cinema.Areas.Admin.Controllers
 {
     [Area(ADMIN)]
 	[Authorize(Roles = ROLE_ADMIN)]
-	public class StatisticsController : Controller
+	public sealed class StatisticsController : Controller
     {
         private readonly IUnitOfWork _unitOFWork;
 
@@ -64,7 +64,7 @@ namespace Cinema.Areas.Admin.Controllers
         {
 			(day, month, year) = DateHelpers.GetTodayIfInvalid(day, month, year);
 			var shows = _unitOFWork.Shows
-                .GetAll("Room")
+                .GetAll(includeProperties: "Room")
                 .Where(s => 
                     s.Time.Day == day && 
                     s.Time.Month == month && 

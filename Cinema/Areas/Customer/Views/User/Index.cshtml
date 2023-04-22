@@ -1,0 +1,57 @@
+﻿@model Cinema.Models.ViewModels.UserHistoryViewModel
+@{
+	ViewData["Title"] = "Profilo";
+}
+
+<div class="container row g-1">
+	<div class="col-lg-4">
+		<h3 class="text-center">Film Visti</h3>
+		<div class="d-flex flex-column">
+			@foreach (var item in Model.FilmsWatched)
+			{
+				<div class="card p-2">
+					<img src="..\..\@item.ImageUrl" class="card-img-top rounded" />
+					<div class="card-body">
+						<p class="card-title text-primary">@item.Title</p>
+					</div>
+				</div>
+			}
+		</div>
+	</div>
+	<div class="col-lg-4">
+		<h3 class="text-center">Biglietti Acquistati</h3>
+		<div class="d-flex flex-column">
+			@foreach (var item in Model.NonRefundableTickets)
+			{
+				<div class="card">
+					<div class="card-body">
+						<p class="card-title text-primary">@item.Show.Film.Title</p>
+						<div class="card-title text-info">
+							Durata: @item.Show.Time <br />
+							Posto: @item.Lane-@item.Number
+							Sala: @item.Show.RoomId
+						</div>
+					</div>
+				</div>
+			}
+		</div>
+	</div>
+	<div class="col-lg-4">
+		<h3 class="text-center">Biglietti Rimborsabili</h3>
+		<div class="d-flex flex-column">
+			@foreach (var item in Model.RefundableTickets)
+			{
+				<div class="card">
+					<div class="card-body">
+						<p class="card-title text-primary">@item.Show.Film.Title</p>
+						<div class="card-title text-info">
+							Durata: @item.Show.Time <br/>
+							Posto: @item.Lane-@item.Number
+							Sala: @item.Show.RoomId
+						</div>
+					</div>
+				</div>
+			}
+		</div>
+	</div>
+</div>

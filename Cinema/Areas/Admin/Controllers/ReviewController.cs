@@ -11,7 +11,7 @@ using static Cinema.Constants.Roles;
 namespace Cinema.Areas.Admin.Controllers
 {
 	[Area(ADMIN)]
-	public class ReviewController : Controller
+	public sealed class ReviewController : Controller
 	{
 		private readonly IUnitOfWork _unitOfWork;
 

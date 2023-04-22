@@ -28,6 +28,12 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="Customer" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
+                        @if (User.IsInRole(Cinema.Constants.Roles.ROLE_REGULAR_USER))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="Customer" asp-controller="User" asp-action="Index">Profilo</a>
+                            </li>
+                        }
                         @if (User.IsInRole(Cinema.Constants.Roles.ROLE_ADMIN))
                         {
                             <li class="nav-item dropdown">
@@ -55,7 +61,9 @@
             @RenderBody()
         </main>
     </div>
+    <div class="spacer">
 
+    </div>
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2023 - Ferrario Filippo - <a asp-area="Customer" asp-controller="Home" asp-action="Privacy">Privacy</a>

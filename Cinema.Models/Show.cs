@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using System.Collections;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
@@ -33,6 +34,6 @@ namespace Cinema.Models
 
 		[JsonIgnore]
 		[ValidateNever]
-		public ICollection<Ticket> Tickets { get; set; } = null!;
+		public IEnumerable<Ticket> Tickets { get; set; } = null!;
 	}
 }

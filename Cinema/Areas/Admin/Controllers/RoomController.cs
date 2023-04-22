@@ -9,7 +9,7 @@ using static Cinema.Constants.Roles;
 namespace Cinema.Areas.Admin.Controllers
 {
 	[Area(ADMIN)]
-	public class RoomController : Controller
+	public sealed class RoomController : Controller
 	{
 		private readonly IUnitOfWork _unitOfWork;
 

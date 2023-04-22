@@ -18,9 +18,12 @@ namespace Cinema.DataAccess.Repository
 			dbSet.Add(entity);
 		}
 
-		public IEnumerable<T> GetAll(string? includeProperties)
+		public IEnumerable<T> GetAll(Expression<Func<T, bool>>? filter = null, string? includeProperties = null)
 		{
 			IQueryable<T> query = dbSet;
+
+			if (filter is not null)
+				query = query.Where(filter);
 
 			if (!string.IsNullOrWhiteSpace(includeProperties))
 			{

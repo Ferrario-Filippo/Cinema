@@ -1,8 +1,51 @@
-﻿@{
-    ViewData["Title"] = "Home";
+﻿@model IEnumerable<Cinema.Models.ViewModels.FilmDisplayViewModel>
+@{
+	ViewData["Title"] = "Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Benvenuto</h1>
-    
+<div class="text-center vh-100 mb-5">
+	<h1 class="display-4">Benvenuto</h1>
+	<h3>Ecco i film attualmente disponibili</h3>
+	<div class="row pb-3">
+		@foreach (var filmViewModel in Model)
+		{
+			<div class="col-lg-3 col-md-6">
+				<div class="row p-2">
+					<div class="col-12 p-1" style="border: 1px solid #008cba; border-radius: 5px">
+						<div class="card">
+							<img src="@filmViewModel.Film.ImageUrl" class="card-img-top rounded" />
+							<div class="card-body">
+								<div class="pl-1">
+									<p class="card-title h5 text-primary">@filmViewModel.Film.Title</p>
+									<p class="card-title text-info">Durata: @filmViewModel.Film.Duration</p>
+								</div>
+								<div class="pl-1 d-flex flex-row">
+									Valutazione: 
+									<div class="d-flex flex-row mx-1">
+										@{
+											var i = 0;
+										}
+										@for (; i < filmViewModel.Rating -1 ; i++)
+										{
+											<i class="bi-star-fill yellow icon"></i>
+										}
+										@if (i != 5 && ((filmViewModel.Rating - i) > 0.25d || (filmViewModel.Rating - i) < 0.75d))
+										{
+											i++;
+											<i class="bi-star-half yellow icon"></i>
+										}
+										@for (; i < 5; i++)
+										{
+											<i class="bi-star black icon"></i>
+										}
+									</div>
+								</div>
+							</div>
+						</div>
+						<a asp-action="Details" class="btn btn-primary form-control" asp-route-filmId="@filmViewModel.Film.FilmId">Dettagli</a>
+					</div>
+				</div>
+			</div>
+		}
+	</div>
 </div>

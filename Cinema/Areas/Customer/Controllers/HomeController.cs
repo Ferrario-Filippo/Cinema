@@ -1,4 +1,6 @@
-﻿using Cinema.Models;
+﻿using Cinema.DataAccess.Repository.Interfaces;
+using Cinema.Models;
+using Cinema.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using static Cinema.Constants.Areas;
@@ -6,18 +8,66 @@ using static Cinema.Constants.Areas;
 namespace Cinema.Areas.Customer.Controllers
 {
     [Area(CUSTOMER)]
-    public class HomeController : Controller
+    public sealed class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        private readonly IUnitOfWork _unitOfWork;
+
+        public HomeController(ILogger<HomeController> logger, IUnitOfWork unitOfWork)
         {
             _logger = logger;
+            _unitOfWork = unitOfWork;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var ratings = _unitOfWork.Reviews
+                .GetAll()
+                .GroupBy(r => r.FilmId)
+                .Select(g => new { FilmId = g.Key, Rating = g.Average(r => r.Rating) });
+
+
+            var nextWeek = DateTime.Today.AddDays(7);
+            var filmIds = _unitOfWork.Shows
+                .GetAll(s => s.Time >= DateTime.Today && s.Time < nextWeek)
+                .Select(s => s.FilmId)
+                .Distinct();
+
+            var filmsList =
+                from film in _unitOfWork.Films.GetAll(f => filmIds.Any(id => id == f.FilmId))
+                join rating in ratings on film.FilmId equals rating.FilmId into fr
+                from ratedFilms in fr.DefaultIfEmpty()
+                select new FilmDisplayViewModel()
+                {
+                    Film = film,
+                    Rating = ratedFilms?.Rating ?? 0
+                };
+
+            return View(filmsList);
+        }
+
+        public IActionResult Details(int? filmId)
+        {
+            if (filmId is null || filmId is 0 || _unitOfWork.Films.GetFirstOrDefault(f => f.FilmId == filmId) is not Film film)
+                return RedirectToAction(nameof(Index));
+
+            var avgRating = _unitOfWork.Reviews.GetAll(r => r.FilmId == filmId).Average(r => r.Rating);
+            var tickets = _unitOfWork.Tickets.GetAll(t => t.UserId == null).GroupBy(t => t.ShowId);
+            var shows = _unitOfWork.Shows.GetAll(s => s.FilmId == filmId).ToDictionary(s => s.ShowId);
+            foreach (var group in tickets)
+            {
+                shows[group.Key].Tickets = group.Select(g => g);
+            }
+
+            var viewModel = new FilmDetailsViewModel()
+            {
+                Film = film,
+                Rating = avgRating,
+                Shows = shows.Values,
+            };
+
+            return View(viewModel);
         }
 
         public IActionResult Privacy()

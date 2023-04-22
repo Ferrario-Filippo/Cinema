@@ -11,7 +11,7 @@ using static Cinema.Constants.Roles;
 namespace Cinema.Areas.Admin.Controllers
 {
 	[Area(ADMIN)]
-	public class TicketController : Controller
+	public sealed class TicketController : Controller
 	{
 		private readonly IUnitOfWork _unitOfWork;
 
@@ -32,7 +32,7 @@ namespace Cinema.Areas.Admin.Controllers
 			var ticketViewModel = new TicketViewModel()
 			{
 				Shows = _unitOfWork.Shows
-					.GetAll("Film,Room")
+					.GetAll(includeProperties: "Film,Room")
 					.Select(s =>
 						new SelectListItem($"{s.Film.Title} {s.Room.RoomId} {s.Time}", showId.ToString())
 					)

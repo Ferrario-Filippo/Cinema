@@ -13,9 +13,9 @@ function loadDataTable() {
 			url: "/Admin/Review/GetAll"
 		},
 		columns: [
-			{ data: "Rating", width: "15%" },
-			{ data: "user", width: "15%" },
-			{ data: "film", width: "15%" },
+			{ data: "rating", width: "15%" },
+			{ data: "userId", width: "15%" },
+			{ data: "filmId", width: "15%" },
 			{
 				data: "reviewId",
 				render: function (data) {

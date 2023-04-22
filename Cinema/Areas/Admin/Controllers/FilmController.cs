@@ -11,7 +11,7 @@ using static Cinema.Constants.Roles;
 namespace Cinema.Areas.Admin.Controllers
 {
 	[Area(ADMIN)]
-	public class FilmController : Controller
+	public sealed class FilmController : Controller
 	{
 		private readonly string _imageStore = Path.Combine("images", "film");
 
