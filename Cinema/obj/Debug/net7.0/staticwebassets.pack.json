@@ -21,6 +21,10 @@
       "PackagePath": "staticwebassets\\images\\film\\889c1a2a-6f36-40ea-9f03-583507230c09.jpg"
     },
     {
+      "Id": "C:\\Users\\ffili\\Desktop\\Informatica\\Quinta\\ASP.NET\\Cinema_Ferrario_Filippo\\Cinema\\Cinema\\wwwroot\\js\\editTicket.js",
+      "PackagePath": "staticwebassets\\js\\editTicket.js"
+    },
+    {
       "Id": "C:\\Users\\ffili\\Desktop\\Informatica\\Quinta\\ASP.NET\\Cinema_Ferrario_Filippo\\Cinema\\Cinema\\wwwroot\\js\\films.js",
       "PackagePath": "staticwebassets\\js\\films.js"
     },

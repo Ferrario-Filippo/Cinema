@@ -1,0 +1,44 @@
+﻿@model Ticket
+@{
+	ViewData["Title"] = $"Modifica Biglietto";
+}
+
+<form method="post" asp-action="Update">
+	<input asp-for="ShowId" id="showInput" hidden />
+	<input asp-for="UserId" hidden />
+	<input asp-for="Cost" hidden />
+	<div class="row">
+		<div class="col-10">
+			<div class="border p-3 mt-4 row">
+				<div asp-validation-summary="All"></div>
+				<div class="row mb-3 col-6 ms-2">
+					<label asp-for="Lane"></label>
+					<select asp-for="Lane" class="form-select" id="selectLane" onchange="onLaneSelect()">
+						<option selected>@Model.Lane</option>
+					</select>
+					<span asp-validation-for="Lane" class="text-danger"></span>
+				</div>
+				<div class="row mb-3 col-6 ms-2">
+					<label asp-for="Number"></label>
+					<select asp-for="Number" class="form-select" id="selectNumber">
+						<option disabled selected>@Model.Number</option>
+					</select>
+					<span asp-validation-for="Number" class="text-danger"></span>
+				</div>
+				<div class="col-12">
+					<button type="submit" class="btn btn-primary" style="width:150px">Procedi</button>
+					<a asp-controller="User" asp-action="Index" class="btn btn-secondary" style="width:150px">
+						Indietro
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
+
+<section Scripts>
+	@{
+		<partial name="_ValidationScriptsPartial" />
+	}
+	<script src="~/js/editTicket.js"></script>
+</section>

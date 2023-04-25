@@ -11,6 +11,7 @@ using static Cinema.Constants.Roles;
 namespace Cinema.Areas.Admin.Controllers
 {
 	[Area(ADMIN)]
+	[Authorize(Roles = ROLE_ADMIN)]
 	public sealed class FilmController : Controller
 	{
 		private readonly string _imageStore = Path.Combine("images", "film");
@@ -25,13 +26,11 @@ namespace Cinema.Areas.Admin.Controllers
 			_hostEnvironment = hostEnvironment;
 		}
 
-		[Authorize(Roles = ROLE_ADMIN)]
 		public IActionResult Index()
 		{
 			return View();
 		}
 
-		[Authorize(Roles = ROLE_ADMIN)]
 		public IActionResult Upsert(int? id)
 		{
 			var filmViewModel = new FilmViewModel()
@@ -52,7 +51,6 @@ namespace Cinema.Areas.Admin.Controllers
 
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		[Authorize(Roles = ROLE_ADMIN)]
 		public IActionResult Upsert(FilmViewModel filmViewModel, IFormFile? file)
 		{
 			if (!ModelState.IsValid)
@@ -104,7 +102,6 @@ namespace Cinema.Areas.Admin.Controllers
 		}
 
 		[HttpDelete]
-		[Authorize(Roles = ROLE_ADMIN)]
 		public IActionResult Delete(int? id)
 		{
 			if (id is null || id is 0)

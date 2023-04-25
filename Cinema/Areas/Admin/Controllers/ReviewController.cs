@@ -11,6 +11,7 @@ using static Cinema.Constants.Roles;
 namespace Cinema.Areas.Admin.Controllers
 {
 	[Area(ADMIN)]
+	[Authorize(Roles = ROLE_ADMIN)]
 	public sealed class ReviewController : Controller
 	{
 		private readonly IUnitOfWork _unitOfWork;
@@ -20,13 +21,11 @@ namespace Cinema.Areas.Admin.Controllers
 			_unitOfWork = unitOfWork;
 		}
 
-		[Authorize(Roles = ROLE_ADMIN)]
 		public IActionResult Index()
 		{
 			return View();
 		}
 
-		[Authorize(Roles = ROLE_ADMIN)]
 		public IActionResult Upsert(int? id)
 		{
 			var reviewViewModel = new ReviewViewModel()
@@ -53,7 +52,6 @@ namespace Cinema.Areas.Admin.Controllers
 
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		[Authorize(Roles = ROLE_ADMIN)]
 		public IActionResult Upsert(ReviewViewModel reviewViewModel)
 		{
 			if (!ModelState.IsValid)
@@ -84,7 +82,6 @@ namespace Cinema.Areas.Admin.Controllers
 		}
 
 		[HttpDelete]
-		[Authorize(Roles = ROLE_ADMIN)]
 		public IActionResult Delete(int? id)
 		{
 			if (id is null || id is 0)
