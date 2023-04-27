@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
+using static Cinema.Constants.Messages;
 
 namespace Cinema.Models
 {
@@ -10,8 +11,8 @@ namespace Cinema.Models
 		[Key]
 		public int HometownId { get; set; }
 		
-		[Required]
-		[MaxLength(32)]
+		[Required(ErrorMessage = REQUIRED)]
+		[MaxLength(32, ErrorMessage = MAX_LENGTH_32)]
 		[Display(Name = "Nome")]
 		public string Name { get; set; } = string.Empty;
 

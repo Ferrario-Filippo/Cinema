@@ -29,6 +29,10 @@ body {
     height: 64px;
 }
 
+.film-card { }
+
+.show-card { }
+
 @media (min-width: 768px) {
   html {
     font-size: 16px;

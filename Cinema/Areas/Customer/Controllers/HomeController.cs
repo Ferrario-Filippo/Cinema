@@ -1,7 +1,9 @@
 ﻿using Cinema.DataAccess.Repository.Interfaces;
+using Cinema.Helpers;
 using Cinema.Models;
 using Cinema.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Diagnostics;
 using static Cinema.Constants.Areas;
 
@@ -44,7 +46,13 @@ namespace Cinema.Areas.Customer.Controllers
                     Rating = ratedFilms?.Rating ?? 0
                 };
 
-            return View(filmsList);
+            var genres = EnumHelpers.GetFilmGenres();
+
+            return View(new HomeViewModel()
+            {
+                FilmDisplays = filmsList,
+                Genres = genres,
+            });
         }
 
         public IActionResult Details(int? filmId)
@@ -54,10 +62,13 @@ namespace Cinema.Areas.Customer.Controllers
 
             var avgRating = _unitOfWork.Reviews.GetAll(r => r.FilmId == filmId).Average(r => r.Rating);
             var tickets = _unitOfWork.Tickets.GetAll(t => t.UserId == null).GroupBy(t => t.ShowId);
-            var shows = _unitOfWork.Shows.GetAll(s => s.FilmId == filmId).ToDictionary(s => s.ShowId);
+            var shows = _unitOfWork.Shows.GetAll(s => s.FilmId == filmId && s.Time >= DateTime.Today).ToDictionary(s => s.ShowId);
+            var rooms = shows.Values.DistinctBy(s => s.RoomId);
+
             foreach (var group in tickets)
             {
-                shows[group.Key].Tickets = group.Select(g => g);
+                if (shows.ContainsKey(group.Key))
+                    shows[group.Key].Tickets = group.Select(g => g);
             }
 
             var viewModel = new FilmDetailsViewModel()
@@ -65,6 +76,7 @@ namespace Cinema.Areas.Customer.Controllers
                 Film = film,
                 Rating = avgRating,
                 Shows = shows.Values,
+                Rooms = rooms.Select(r => new SelectListItem(r.RoomId.ToString(), r.RoomId.ToString()))
             };
 
             return View(viewModel);

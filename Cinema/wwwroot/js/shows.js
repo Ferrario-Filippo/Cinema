@@ -14,9 +14,9 @@ function loadDataTable() {
 		},
 		columns: [
 			{ data: "time", width: "15%" },
-			{ data: "is3D", width: "15%" },
 			{ data: "roomId", width: "15%" },
 			{ data: "film.title", width: "15%" },
+			{ data: "is3D", width: "15%" },
 			{
 				data: "showId",
 				render: function (data) {

@@ -1,4 +1,4 @@
-﻿using Cinema.Helpers.Constants;
+﻿using Cinema.Constants;
 
 namespace Cinema.Helpers
 {

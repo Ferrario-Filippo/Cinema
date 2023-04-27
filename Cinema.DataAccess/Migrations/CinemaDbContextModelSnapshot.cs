@@ -392,6 +392,9 @@ namespace Cinema.DataAccess.Migrations
                     b.Property<DateTime>("BirthData")
                         .HasColumnType("datetime2");
 
+                    b.Property<double>("Credit")
+                        .HasColumnType("float");
+
                     b.Property<int>("Gender")
                         .HasColumnType("int");
 

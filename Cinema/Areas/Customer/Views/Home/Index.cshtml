@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Cinema.Models.ViewModels.FilmDisplayViewModel>
+﻿@model Cinema.Models.ViewModels.HomeViewModel
 @{
 	ViewData["Title"] = "Home";
 }
@@ -6,10 +6,23 @@
 <div class="text-center vh-100 mb-5">
 	<h1 class="display-4">Benvenuto</h1>
 	<h3>Ecco i film attualmente disponibili</h3>
+	<div class="row mb-2">
+		<div class="row mb-3 col-sm-6 ms-2">
+			<input type="text" id="titleFilter" class="form-control" placeholder="Titolo" />
+		</div>
+		<div class="row mb-3 col-sm-6 ms-2">
+			<label for="genreFilter"></label>
+			<select class="form-select" id="genreFilter" asp-items="Model.Genres">
+				<option selected>--Scegli un genere--</option>
+			</select>
+			<span class="text-danger"></span>
+		</div>
+		<button class="btn btn-primary ms-2" onclick="onFilterClick()">Filtra</button>
+	</div>
 	<div class="row pb-3">
-		@foreach (var filmViewModel in Model)
+		@foreach (var filmViewModel in Model.FilmDisplays)
 		{
-			<div class="col-lg-3 col-md-6">
+			<div class="col-lg-3 col-md-6 film-card" id="@filmViewModel.Film.Title.ToLower()~@filmViewModel.Film.Genre">
 				<div class="row p-2">
 					<div class="col-12 p-1" style="border: 1px solid #008cba; border-radius: 5px">
 						<div class="card">
@@ -49,3 +62,6 @@
 		}
 	</div>
 </div>
+<section Scripts>
+	<script src="~/js/homeFilms.js"></script>
+</section>

@@ -21,12 +21,24 @@
       "PackagePath": "staticwebassets\\images\\film\\889c1a2a-6f36-40ea-9f03-583507230c09.jpg"
     },
     {
+      "Id": "C:\\Users\\ffili\\Desktop\\Informatica\\Quinta\\ASP.NET\\Cinema_Ferrario_Filippo\\Cinema\\Cinema\\wwwroot\\images\\site\\logo.png",
+      "PackagePath": "staticwebassets\\images\\site\\logo.png"
+    },
+    {
       "Id": "C:\\Users\\ffili\\Desktop\\Informatica\\Quinta\\ASP.NET\\Cinema_Ferrario_Filippo\\Cinema\\Cinema\\wwwroot\\js\\editTicket.js",
       "PackagePath": "staticwebassets\\js\\editTicket.js"
     },
     {
+      "Id": "C:\\Users\\ffili\\Desktop\\Informatica\\Quinta\\ASP.NET\\Cinema_Ferrario_Filippo\\Cinema\\Cinema\\wwwroot\\js\\filmDetails.js",
+      "PackagePath": "staticwebassets\\js\\filmDetails.js"
+    },
+    {
       "Id": "C:\\Users\\ffili\\Desktop\\Informatica\\Quinta\\ASP.NET\\Cinema_Ferrario_Filippo\\Cinema\\Cinema\\wwwroot\\js\\films.js",
       "PackagePath": "staticwebassets\\js\\films.js"
+    },
+    {
+      "Id": "C:\\Users\\ffili\\Desktop\\Informatica\\Quinta\\ASP.NET\\Cinema_Ferrario_Filippo\\Cinema\\Cinema\\wwwroot\\js\\homeFilms.js",
+      "PackagePath": "staticwebassets\\js\\homeFilms.js"
     },
     {
       "Id": "C:\\Users\\ffili\\Desktop\\Informatica\\Quinta\\ASP.NET\\Cinema_Ferrario_Filippo\\Cinema\\Cinema\\wwwroot\\js\\hometowns.js",

@@ -6,6 +6,8 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 using System.Text.Encodings.Web;
+using Cinema.Constants;
+using Cinema.DataAccess.Repository.Interfaces;
 using Cinema.Models.Enums;
 using Cinema.Models;
 using Microsoft.AspNetCore.Authentication;
@@ -16,8 +18,7 @@ using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Cinema.Constants;
-using Cinema.DataAccess.Repository.Interfaces;
+using static Cinema.Constants.Messages;
 
 namespace Cinema.Areas.Identity.Pages.Account
 {
@@ -80,7 +81,7 @@ namespace Cinema.Areas.Identity.Pages.Account
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
-            [Required]
+            [Required(ErrorMessage = REQUIRED)]
             [EmailAddress]
             [Display(Name = "Email")]
             public string Email { get; set; }
@@ -89,7 +90,7 @@ namespace Cinema.Areas.Identity.Pages.Account
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
-            [Required]
+            [Required(ErrorMessage = REQUIRED)]
             [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
             [DataType(DataType.Password)]
             [Display(Name = "Password")]
@@ -104,21 +105,21 @@ namespace Cinema.Areas.Identity.Pages.Account
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
 
-            [Required]
+            [Required(ErrorMessage = REQUIRED)]
             [MaxLength(32)]
             [Display(Name = "Nome")]
             public string Name { get; set; } = string.Empty;
 
-            [Required]
+            [Required(ErrorMessage = REQUIRED)]
             [MaxLength(32)]
             [Display(Name = "Cognome")]
             public string Surname { get; set; } = string.Empty;
 
-            [Required]
+            [Required(ErrorMessage = REQUIRED)]
             [Display(Name = "Data di nascita")]
             public DateTime BirthDate { get; set; } = DateTime.Now;
 
-            [Required]
+            [Required(ErrorMessage = REQUIRED)]
             [Display(Name = "Sesso")]
             public Gender Gender { get; set; }
 

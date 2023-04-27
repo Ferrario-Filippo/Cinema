@@ -19,7 +19,7 @@ namespace Cinema.Helpers
 			{ "Heimat", "Heimat" },
 			{ "History", "Storico" },
 			{ "Horror", "Horror" },
-			{ "Mystery", "Misterp" },
+			{ "Mystery", "Mistero" },
 			{ "Romance", "Romatico" },
 			{ "ScienceFiction", "Fantascienza" },
 			{ "Thriller", "Thriller" },
