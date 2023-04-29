@@ -3,8 +3,10 @@
     ViewData["Title"] = "Dettagli";
 }
 
-<form method="post" class="mb-5 min-vh-100">
+<form method="get" class="mb-5 min-vh-100" asp-action="Buy">
     <input hidden asp-for="Film.FilmId" />
+    <input hidden asp-for="Film.Title" />
+    <input hidden asp-for="ShowId" id="chosenShow" />
     <div class="card container">
         <div class="card-header bg-primary text-light ml-0 row pt-3">
             <div class="col-12 col-md-6">
@@ -50,10 +52,13 @@
             <div class="container rounded p-2">
                 <div class="row justify-content-center">
                     <div class="col-8 col-lg-8">
+                        <div class="row pl-2 mt-2 gap-1">
+                            <p class="text-secondary">@Html.Raw(@Model.Film.Description)</p>
+                        </div>
                         <div class="row pb-3 text-muted gap-1">
                             @foreach (var show in Model.Shows)
                             {
-                                <div class="col-md-3 col-5 card d-flex flex-column show-card" id="@show.RoomId~@show.Time.ToString("yyyy-MM-dd hh:mm")">
+                                <div class="col-md-3 col-5 card d-flex flex-column show-card" id="@show.RoomId~@show.Time.ToString("yyyy-MM-dd hh:mm")~@show.ShowId" onclick="onShowClicked(this)">
                                     <div>ORA: @show.Time.ToString("hh:mm")</div>
                                     <div>DATA: @show.Time.ToString("dd/MM/yyyy")</div>
                                     <div>DISPONIBILI: @show.Tickets.Count()</div>
@@ -64,9 +69,6 @@
                                 </div>
                             }
                         </div>
-                        <div class="row pl-2 mt-2">
-                            <p class="text-secondary">@Html.Raw(@Model.Film.Description)</p>
-                        </div>
                     </div>
                     <div class="col-8 col-lg-3 offset-lg-1 text-center">
                         <img src="..\..\@Model.Film.ImageUrl" class="rounded" style="width:100%" />
@@ -74,13 +76,14 @@
                 </div>
             </div>
         </div>
+
         <div class="card-footer">
             <div class="row">
                 <div class="col-12 col-md-6 pb-1">
                     <a class="btn btn-success form-control d-flex align-items-center justify-content-center" style="height:50px;" asp-action="Index">Indietro</a>
                 </div>
                 <div class="col-12 col-md-6 pb-1">
-                    <button type="submit" value="Add to Cart" class="btn btn-primary form-control" style="height:50px;">Acquista</button>
+                    <button type="submit" class="btn btn-primary form-control" style="height:50px;" disabled id="submitBtn">Acquista</button>
                 </div>
             </div>
         </div>

@@ -6,7 +6,7 @@ namespace Cinema.Helpers
 {
 	public static class EnumHelpers
 	{
-		public static IImmutableDictionary<string, string> genresITLocalization = new Dictionary<string, string>() 
+		private static IImmutableDictionary<string, string> _genresITLocalization = new Dictionary<string, string>() 
 		{
 			{ "Action", "Azione" },
 			{ "Adventure", "Avventura" },
@@ -33,12 +33,12 @@ namespace Cinema.Helpers
 			for(int i = 0; i < genres.Length; i++)
 			{
 				yield return new SelectListItem(
-					genresITLocalization[genres[i]], 
+					_genresITLocalization[genres[i]], 
 					genres[i]);
 			}
 		}
 
-        public static IImmutableDictionary<string, string> gendersITLocalization = new Dictionary<string, string>()
+        private static IImmutableDictionary<string, string> _gendersITLocalization = new Dictionary<string, string>()
         {
             { "NonBinary", "Non binario" },
             { "Male", "Maschio" },
@@ -51,9 +51,28 @@ namespace Cinema.Helpers
             for (int i = 0; i < genders.Length; i++)
             {
                 yield return new SelectListItem(
-                    gendersITLocalization[genders[i]],
+                    _gendersITLocalization[genders[i]],
                     genders[i]);
             }
         }
-    }
+
+		private static IImmutableDictionary<string, string> _paymentITLocalization = new Dictionary<string, string>()
+		{
+			{ "Residual", "Credito" },
+			{ "Credit", "Carta di credito" },
+			{ "Debit", "Carta di debito" },
+			{ "PayPal", "PayPal" }
+		}.ToImmutableDictionary();
+
+		public static IEnumerable<SelectListItem> GetPayments()
+		{
+			var methods = Enum.GetNames(typeof(Payment));
+			for (int i = 0; i < methods.Length; i++)
+			{
+				yield return new SelectListItem(
+					_paymentITLocalization[methods[i]],
+					methods[i]);
+			}
+		}
+	}
 }

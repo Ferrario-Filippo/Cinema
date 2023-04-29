@@ -25,6 +25,14 @@
       "PackagePath": "staticwebassets\\images\\site\\logo.png"
     },
     {
+      "Id": "C:\\Users\\ffili\\Desktop\\Informatica\\Quinta\\ASP.NET\\Cinema_Ferrario_Filippo\\Cinema\\Cinema\\wwwroot\\images\\site\\seat.png",
+      "PackagePath": "staticwebassets\\images\\site\\seat.png"
+    },
+    {
+      "Id": "C:\\Users\\ffili\\Desktop\\Informatica\\Quinta\\ASP.NET\\Cinema_Ferrario_Filippo\\Cinema\\Cinema\\wwwroot\\js\\buy.js",
+      "PackagePath": "staticwebassets\\js\\buy.js"
+    },
+    {
       "Id": "C:\\Users\\ffili\\Desktop\\Informatica\\Quinta\\ASP.NET\\Cinema_Ferrario_Filippo\\Cinema\\Cinema\\wwwroot\\js\\editTicket.js",
       "PackagePath": "staticwebassets\\js\\editTicket.js"
     },

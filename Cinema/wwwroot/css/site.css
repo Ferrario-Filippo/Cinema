@@ -29,6 +29,30 @@ body {
     height: 64px;
 }
 
+.seat-img {
+    height: 24px;
+    width: 24px;
+    opacity: 0.7;
+}
+
+.unavailable-seat {
+    opacity: 0.3;
+}
+
+.seat { 
+    background: #00000000;
+    border: 0px;
+    padding: 0px;
+}
+
+.seats-section {
+    display: none;
+}
+
+.alternative-seats-section {
+    display: flex;
+}
+
 .film-card { }
 
 .show-card { }
@@ -40,5 +64,13 @@ body {
 
   .spacer {
       height: 0px;
+  }
+
+  .seats-section {
+      display: flex;
+  }
+
+  .alternative-seats-section {
+      display: none;
   }
 }

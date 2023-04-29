@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jgu0xqz06TrmI6MwuJ6TDDSgmIDid0l0ZHqXyVL5jH8=",
+  "Hash": "W4Jxem7vbh5wmnJFwVwtIYVCTe/ahfGhL3gBXBKYbXU=",
   "Source": "Cinema",
   "BasePath": "_content/Cinema",
   "Mode": "Default",
@@ -1154,6 +1154,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\site\\logo.png"
+    },
+    {
+      "Identity": "C:\\Users\\ffili\\Desktop\\Informatica\\Quinta\\ASP.NET\\Cinema_Ferrario_Filippo\\Cinema\\Cinema\\wwwroot\\images\\site\\seat.png",
+      "SourceId": "Cinema",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ffili\\Desktop\\Informatica\\Quinta\\ASP.NET\\Cinema_Ferrario_Filippo\\Cinema\\Cinema\\wwwroot\\",
+      "BasePath": "_content/Cinema",
+      "RelativePath": "images/site/seat.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\site\\seat.png"
+    },
+    {
+      "Identity": "C:\\Users\\ffili\\Desktop\\Informatica\\Quinta\\ASP.NET\\Cinema_Ferrario_Filippo\\Cinema\\Cinema\\wwwroot\\js\\buy.js",
+      "SourceId": "Cinema",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ffili\\Desktop\\Informatica\\Quinta\\ASP.NET\\Cinema_Ferrario_Filippo\\Cinema\\Cinema\\wwwroot\\",
+      "BasePath": "_content/Cinema",
+      "RelativePath": "js/buy.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\buy.js"
     },
     {
       "Identity": "C:\\Users\\ffili\\Desktop\\Informatica\\Quinta\\ASP.NET\\Cinema_Ferrario_Filippo\\Cinema\\Cinema\\wwwroot\\js\\editTicket.js",

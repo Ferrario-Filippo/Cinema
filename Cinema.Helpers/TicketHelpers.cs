@@ -18,7 +18,8 @@ namespace Cinema.Helpers
 
 			for (var lane = 0; remainingSeats > 0; lane++)
 			{
-				for (ushort number = 1; number <= (BASE_SEATS + SEATS_INCREASE * lane) && remainingSeats > 0; number++)
+				var seatsPerLane = GetMaxSeatsPerLane(lane);
+				for (ushort number = 1; number <= seatsPerLane && remainingSeats > 0; number++)
 				{
 					yield return new()
 					{
@@ -30,6 +31,11 @@ namespace Cinema.Helpers
 					--remainingSeats;
 				}
 			}
+		}
+
+		public static int GetMaxSeatsPerLane(int lane)
+		{
+			return BASE_SEATS + SEATS_INCREASE * (lane < 7 ? lane : 6);
 		}
 	}
 }

@@ -25,6 +25,17 @@ function onLaneSelect() {
 	});
 }
 
+function onNumberSelect() {
+	const number = numberSelect.value;
+	const lane = laneSelect.value;
+
+	for (seat in seats) {
+		if (seat.lane === lane && seat.number === number) {
+			$('#costInput').val(seat.cost);
+		}
+	}
+}
+
 function onLoad() {
 	const showId = document.getElementById('showInput').value;
 	laneSelect = document.getElementById('selectLane');
@@ -34,7 +45,7 @@ function onLoad() {
 	defaultLane = laneSelect.value;
 	defaultNumber = numberSelect.value;
 
-	$.get(`/Customer/User/GetAvailableSeats?showId=${showId}`, function (data) {
+	$.get(`/Api/Ticket/GetAvailableSeats?showId=${showId}`, function (data) {
 		seats = data['data'];
 		var addedLanes = new Set();
 		addedLanes.add(defaultLane);

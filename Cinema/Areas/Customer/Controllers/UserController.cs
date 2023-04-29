@@ -1,13 +1,11 @@
 ﻿using Cinema.DataAccess.Repository.Interfaces;
+using Cinema.Helpers;
 using Cinema.Models;
 using Cinema.Models.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Numerics;
-using System.Security.Claims;
 using static Cinema.Constants.Areas;
 using static Cinema.Constants.Messages;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Cinema.Areas.Customer.Controllers
 {
@@ -24,7 +22,7 @@ namespace Cinema.Areas.Customer.Controllers
 
 		public IActionResult Index()
 		{
-			if (!TryGetUserIdentity(out var claim))
+			if (!IdentityHelpers.TryGetUserIdentity(User, out var claim))
 				return NotFound();
 
 			var tickets = _unitOfWork.Tickets.GetAll(t => t.UserId == claim!.Value, "Show");
@@ -66,7 +64,7 @@ namespace Cinema.Areas.Customer.Controllers
 			if (
 				showId is null || lane is null || number is null ||
 				showId is 0 || lane is '\0' || number is 0 ||
-				!TryGetUserIdentity(out var identity)
+				!IdentityHelpers.TryGetUserIdentity(User, out var identity)
 				)
 				return NotFound();
 
@@ -77,28 +75,59 @@ namespace Cinema.Areas.Customer.Controllers
 				t.Number == number
 				);
 
-			return View(ticket);
+			if (ticket is null)
+				return NotFound();
+
+			return View(new EditTicketViewModel()
+			{
+				NewTicket = ticket,
+				OldTicket = new TicketInfo()
+				{
+					Lane = ticket.Lane,
+					Number = ticket.Number,
+					Cost = ticket.Cost,
+				}
+			});
 		}
 
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public IActionResult Update(Ticket ticket)
+		public IActionResult Update(EditTicketViewModel ticket)
 		{
 			if (!ModelState.IsValid)
 				return View(ticket);
 
-			TryGetUserIdentity(out var identity);
-			if (ticket.UserId == identity!.Value)
+			IdentityHelpers.TryGetUserIdentity(User, out var identity);
+			if (ticket.NewTicket.UserId == identity!.Value && 
+				_unitOfWork.ApplicationUsers.GetFirstOrDefault(u => u.Id == identity.Value) is User user)
 			{
-				_unitOfWork.Tickets.Update(ticket);
-				TempData["success"] = EDIT_SUCCESS;
-				_unitOfWork.Save();
-			}
-			else
-			{
-				TempData["success"] = EDIT_FAIL;
+				var oldTicket = _unitOfWork.Tickets.GetFirstOrDefault(t =>
+					t.Number == ticket.OldTicket.Number &&
+					t.Lane == ticket.OldTicket.Lane &&
+					t.ShowId == ticket.NewTicket.ShowId);
+
+				var difference = ticket.OldTicket.Cost - ticket.NewTicket.Cost;
+				if (difference < user.Credit || true /*TODO: Remove this true*/)
+					user.Credit -= difference;
+				else
+				{
+					// TODO: Require payment
+				}
+
+				if (oldTicket is not null)
+				{
+					oldTicket.UserId = null;
+					_unitOfWork.Tickets.Update(oldTicket);
+					_unitOfWork.Tickets.Update(ticket.NewTicket);
+
+					TempData["success"] = EDIT_SUCCESS;
+					_unitOfWork.Save();
+
+					return RedirectToAction(nameof(Index));
+				}
 			}
 
+			TempData["error"] = EDIT_FAIL;
 			return RedirectToAction(nameof(Index));
 		}
 
@@ -108,7 +137,7 @@ namespace Cinema.Areas.Customer.Controllers
 			if (
 				showId is null || lane is null || number is null ||
 				showId is 0 || lane is '\0' || number is 0 ||
-				!TryGetUserIdentity(out var identity)
+				!IdentityHelpers.TryGetUserIdentity(User, out var identity)
 				)
 				return NotFound();
 
@@ -128,34 +157,6 @@ namespace Cinema.Areas.Customer.Controllers
 			_unitOfWork.Save();
 
 			return RedirectToAction(nameof(Index));
-		}
-
-		// APIs
-		public IActionResult GetAvailableSeats(int? showId)
-		{
-			if (showId is null || showId is 0)
-				return Json(new { Message = "Non trovato" });
-
-			var seats = _unitOfWork.Tickets
-				.GetAll(t => t.ShowId == showId && t.UserId == null)
-				.Select(t => new { t.Lane, t.Number});
-
-			return Json(new { Data = seats });
-		}
-
-		// Local helpers
-		private bool TryGetUserIdentity(out Claim? identity)
-		{
-			identity = null;
-
-			var userIdentity = User.Identity;
-			if (userIdentity is null)
-				return false;
-
-			var claimsIdentity = (ClaimsIdentity)userIdentity;
-			identity = claimsIdentity?.FindFirst(ClaimTypes.NameIdentifier);
-
-			return identity is not null;
 		}
 	}
 }
