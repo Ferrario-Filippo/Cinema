@@ -45,6 +45,10 @@ body {
     padding: 0px;
 }
 
+.selected-seat {
+    opacity: 1.0;
+}
+
 .seats-section {
     display: none;
 }

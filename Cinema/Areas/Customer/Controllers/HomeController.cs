@@ -115,19 +115,24 @@ namespace Cinema.Areas.Customer.Controllers
 			var tickets = new List<Ticket>();
 			foreach (var ticket in viewModel.Tickets)
 			{
-				var ticketInDb = _unitOfWork.Tickets.GetFirstOrDefault(t =>
-						t.Number == ticket.Number &&
-						t.Lane == ticket.Lane &&
-						t.ShowId == viewModel.ShowId &&
-						t.UserId == null);
-
-				if (ticketInDb is null)
+				if (ticket.Lane is not '\0' && 
+					ticket.Number is not 0 && 
+					viewModel.ShowId is not 0)
 				{
-					ViewData["error"] = TICKETS_NO_AVAILABLE;
-					return View(viewModel);
-				}
+					var ticketInDb = _unitOfWork.Tickets.GetFirstOrDefault(t =>
+							t.Number == ticket.Number &&
+							t.Lane == ticket.Lane &&
+							t.ShowId == viewModel.ShowId &&
+							t.UserId == null);
 
-				tickets.Add(ticketInDb);
+					if (ticketInDb is null)
+					{
+						ViewData["error"] = TICKETS_NO_AVAILABLE;
+						return View(viewModel);
+					}
+
+					tickets.Add(ticketInDb);
+				}
 			}
 
 			var user = _unitOfWork.ApplicationUsers.GetFirstOrDefault(u => u.Id == identity!.Value);
@@ -148,10 +153,10 @@ namespace Cinema.Areas.Customer.Controllers
 				_unitOfWork.ApplicationUsers.Update(user);
 			}
 			else if (!CreditCardHelpers.IsCreditCardValid(
-				viewModel.NameOnCard, 
-				viewModel.CardNumber, 
-				viewModel.Expire, 
-				viewModel.CCV, 
+				viewModel.NameOnCard,
+				viewModel.CardNumber,
+				viewModel.Expire,
+				viewModel.CCV,
 				out var message))
 			{
 				ViewData["error"] = message;
