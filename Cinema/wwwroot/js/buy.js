@@ -43,9 +43,9 @@ function onSeatClicked(sender) {
 		const itemIndex = selectedSeats.indexOf(sender.id);
 
 		if (itemIndex != -1) {
-			$(costIds[selectedSeats.length]).val("0");
 			sender.children[0].classList.remove('selected-seat');
 			selectedSeats.splice(itemIndex, 1);
+			$(costIds[selectedSeats.length]).val("0");
 			updateCart();
 
 			return;
@@ -180,6 +180,7 @@ function deselectSeat(ticketIndex) {
 
 function updateCart() {
 	var total = 0.0;
+
 	for (var i = 0; i < costIds.length; i++) {
 		const value = parseFloat($(costIds[i]).val());
 

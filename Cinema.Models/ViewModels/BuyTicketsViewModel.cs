@@ -17,7 +17,7 @@ namespace Cinema.Models.ViewModels
 
 		public int Capacity { get; set; } = 0;
 
-		public IEnumerable<TicketInfo> Tickets { get; set; } = null!;
+		public List<TicketInfo> Tickets { get; set; } = null!;
 
 		[Required]
 		[Display(Name = "Nome sulla carta")]

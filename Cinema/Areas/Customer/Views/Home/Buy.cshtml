@@ -4,13 +4,15 @@
 }
 
 <div class="row g-4 mb-5">
-	<input hidden asp-for="ShowId" id="showIdInput" />
 	<div class="col-lg-4">
 		<h4 class="d-flex flex-column justify-content-between align-items-center mb-3">
 			<span class="text-primary">@Model.FilmTitle</span>
 			<span>@Model.Date.ToString("hh:mm dd/MM/yyyy")</span>
 		</h4>
 		<ul class="list-group mb-3">
+			<li class="list-group-item py-auto">
+				<h5>Carrello:</h5>
+			</li>
 			<li class="list-group-item d-none justify-content-between lh-sm" id="firstTicketCart">
 				<h6 class="my-0"></h6>
 				<span class="text-body-secondary"></span>
@@ -35,6 +37,7 @@
 	</div>
 	<div class="col-lg-8">
 		<form method="post" asp-action="Buy">
+			<input hidden asp-for="ShowId" id="showIdInput" />
 			<h3>Scegli i biglietti</h3>
 			<div class="mb-5 mt-3">
 				<div class="seats-section flex-column justify-content-center">
@@ -53,72 +56,72 @@
 				</div>
 				<div class="alternative-seats-section flex-column">
 					<div id="firstTicket" class="row mb-2">
-						<input hidden asp-for="Tickets.ElementAt(0).Cost" id="costFirst" />
+						<input hidden asp-for="Tickets[0].Cost" id="costFirst" />
 						<div class="col-6">
-							<label asp-for="Tickets.ElementAt(0).Lane"></label>
-							<select asp-for="Tickets.ElementAt(0).Lane" id="laneSelectFirst" class="form-select" onchange="onLaneSelect(this)">
+							<label asp-for="Tickets[0].Lane"></label>
+							<select asp-for="Tickets[0].Lane" id="laneSelectFirst" class="form-select" onchange="onLaneSelect(this)">
 								<option selected value="0">--Seleziona la fila--</option>
 							</select>
-							<span asp-validation-for="Tickets.ElementAt(0).Lane" class="text-danger"></span>
+							<span asp-validation-for="Tickets[0].Lane" class="text-danger"></span>
 						</div>
 						<div class="col-6">
-							<label asp-for="Tickets.ElementAt(0).Number"></label>
-							<select asp-for="Tickets.ElementAt(0).Number" id="numberSelectFirst" class="form-select" onchange="onNumberSelect(this)">
+							<label asp-for="Tickets[0].Number"></label>
+							<select asp-for="Tickets[0].Number" id="numberSelectFirst" class="form-select" onchange="onNumberSelect(this)">
 								<option selected value="0">--Seleziona il numero--</option>
 							</select>
-							<span asp-validation-for="Tickets.ElementAt(0).Number" class="text-danger"></span>
+							<span asp-validation-for="Tickets[0].Number" class="text-danger"></span>
 						</div>
 					</div>
 					<div id="secondTicket" class="row mb-2">
-						<input hidden asp-for="Tickets.ElementAt(1).Cost" id="costSecond" />
+						<input hidden asp-for="Tickets[1].Cost" id="costSecond" />
 						<div class="col-6">
-							<label asp-for="Tickets.ElementAt(1).Lane"></label>
-							<select asp-for="Tickets.ElementAt(1).Lane" id="laneSelectSecond" class="form-select" onchange="onLaneSelect(this)">
+							<label asp-for="Tickets[1].Lane"></label>
+							<select asp-for="Tickets[1].Lane" id="laneSelectSecond" class="form-select" onchange="onLaneSelect(this)">
 								<option selected value="0">--Seleziona la fila--</option>
 							</select>
-							<span asp-validation-for="Tickets.ElementAt(1).Lane" class="text-danger"></span>
+							<span asp-validation-for="Tickets[1].Lane" class="text-danger"></span>
 						</div>
 						<div class="col-6">
-							<label asp-for="Tickets.ElementAt(1).Number"></label>
-							<select asp-for="Tickets.ElementAt(1).Number" id="numberSelectSecond" class="form-select" onchange="onNumberSelect(this)">
+							<label asp-for="Tickets[1].Number"></label>
+							<select asp-for="Tickets[1].Number" id="numberSelectSecond" class="form-select" onchange="onNumberSelect(this)">
 								<option selected value="0">--Seleziona il numero--</option>
 							</select>
-							<span asp-validation-for="Tickets.ElementAt(1).Number" class="text-danger"></span>
+							<span asp-validation-for="Tickets[1].Number" class="text-danger"></span>
 
 						</div>
 					</div>
 					<div id="thirdTicket" class="row mb-2">
-						<input hidden asp-for="Tickets.ElementAt(2).Cost" id="costThird" />
+						<input hidden asp-for="Tickets[2].Cost" id="costThird" />
 						<div class="col-6">
-							<label asp-for="Tickets.ElementAt(2).Lane"></label>
-							<select asp-for="Tickets.ElementAt(2).Lane" id="laneSelectThird" class="form-select" onchange="onLaneSelect(this)">
+							<label asp-for="Tickets[2].Lane"></label>
+							<select asp-for="Tickets[2].Lane" id="laneSelectThird" class="form-select" onchange="onLaneSelect(this)">
 								<option selected value="0">--Seleziona la fila--</option>
 							</select>
-							<span asp-validation-for="Tickets.ElementAt(2).Lane" class="text-danger"></span>
+							<span asp-validation-for="Tickets[2].Lane" class="text-danger"></span>
 						</div>
 						<div class="col-6">
-							<label asp-for="Tickets.ElementAt(2).Number"></label>
-							<select asp-for="Tickets.ElementAt(2).Number" id="numberSelectThird" class="form-select" onchange="onNumberSelect(this)">
+							<label asp-for="Tickets[2].Number"></label>
+							<select asp-for="Tickets[2].Number" id="numberSelectThird" class="form-select" onchange="onNumberSelect(this)">
 								<option selected value="0">--Seleziona il numero--</option>
 							</select>
-							<span asp-validation-for="Tickets.ElementAt(2).Number" class="text-danger"></span>
+							<span asp-validation-for="Tickets[2].Number" class="text-danger"></span>
 						</div>
 					</div>
 					<div id="fourthTicket" class="row mb-23">
-						<input hidden asp-for="Tickets.ElementAt(3).Cost" id="costFourth" />
+						<input hidden asp-for="Tickets[3].Cost" id="costFourth" />
 						<div class="col-6">
-							<label asp-for="Tickets.ElementAt(3).Lane"></label>
-							<select asp-for="Tickets.ElementAt(3).Lane" id="laneSelectFourth" class="form-select" onchange="onLaneSelect(this)">
+							<label asp-for="Tickets[3].Lane"></label>
+							<select asp-for="Tickets[3].Lane" id="laneSelectFourth" class="form-select" onchange="onLaneSelect(this)">
 								<option selected value="0">--Seleziona la fila--</option>
 							</select>
-							<span asp-validation-for="Tickets.ElementAt(3).Lane" class="text-danger"></span>
+							<span asp-validation-for="Tickets[3].Lane" class="text-danger"></span>
 						</div>
 						<div class="col-6">
-							<label asp-for="Tickets.ElementAt(3).Number"></label>
-							<select asp-for="Tickets.ElementAt(3).Number" id="numberSelectFourth" class="form-select" onchange="onNumberSelect(this)">
+							<label asp-for="Tickets[3].Number"></label>
+							<select asp-for="Tickets[3].Number" id="numberSelectFourth" class="form-select" onchange="onNumberSelect(this)">
 								<option selected value="0">--Seleziona il numero--</option>
 							</select>
-							<span asp-validation-for="Tickets.ElementAt(3).Number" class="text-danger"></span>
+							<span asp-validation-for="Tickets[3].Number" class="text-danger"></span>
 						</div>
 					</div>
 				</div>

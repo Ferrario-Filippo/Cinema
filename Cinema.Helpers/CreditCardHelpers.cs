@@ -36,7 +36,7 @@ namespace Cinema.Helpers
 
 		private static bool ValidateDate(string expire)
 		{
-			if (expire[3] != '/')
+			if (expire[2] != '/')
 				return false;
 
 			var components = expire.Split('/');

@@ -19,22 +19,22 @@
 				<span asp-validation-for="Input.Email" class="text-danger"></span>
 			</div>
 			<div class="row">
-				<div class="form-floating mb-3 py-2 col-md-6">
+				<div class="form-floating mb-3 px-2 col-md-6">
 					<input asp-for="Input.Name" class="form-control" aria-required="true" placeholder="Nome" />
 					<label asp-for="Input.Name">Nome</label>
 					<span asp-validation-for="Input.Name" class="text-danger"></span>
 				</div>
-				<div class="form-floating mb-3 py-2 col-md-6">
+				<div class="form-floating mb-3 px-2 col-md-6">
 					<input asp-for="Input.Surname" class="form-control" aria-required="true" placeholder="Cognome" />
 					<label asp-for="Input.Surname">Cognome</label>
 					<span asp-validation-for="Input.Surname" class="text-danger"></span>
 				</div>
-				<div class="form-floating mb-3 py-2 col-md-6">
+				<div class="form-floating mb-3 px-2 col-md-6">
 					<input asp-for="Input.BirthDate" type="date" class="form-control" aria-required="true" placeholder="dd/mm/yyyy" />
 					<label asp-for="Input.BirthDate">Data di nascita</label>
 					<span asp-validation-for="Input.BirthDate" class="text-danger"></span>
 				</div>
-				<div class="form-floating mb-3 py-2 col-md-6">
+				<div class="form-floating mb-3 px-2 col-md-6">
 					<select asp-for="Input.Gender" asp-items="@Model.Input.GenderList" class="form-select" aria-label="Role">
 						<option disabled selected>-Seleziona genere-</option>
 					</select>

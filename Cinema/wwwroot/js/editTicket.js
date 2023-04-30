@@ -19,7 +19,6 @@ function onLaneSelect() {
 
 	$.each(seats, function (i, seat) {
 		if (seat.lane === lane) {
-			console.log(lane, seat.number)
 			$('#selectNumber').append(new Option(seat.number, seat.number));
 		}
 	});
@@ -29,9 +28,9 @@ function onNumberSelect() {
 	const number = numberSelect.value;
 	const lane = laneSelect.value;
 
-	for (seat in seats) {
-		if (seat.lane === lane && seat.number === number) {
-			$('#costInput').val(seat.cost);
+	for (var seat of seats) {
+		if (seat.lane === lane && seat.number == number) {
+			$('#costInput').val(seat.cost.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }));
 		}
 	}
 }

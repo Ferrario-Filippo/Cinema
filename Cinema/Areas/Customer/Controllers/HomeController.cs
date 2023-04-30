@@ -94,6 +94,7 @@ namespace Cinema.Areas.Customer.Controllers
 
 			var buyViewModel = new BuyTicketsViewModel()
 			{
+				ShowId = show.ShowId,
 				Capacity = show.Room.Seats,
 				FilmTitle = viewModel.Film.Title,
 				Date = show.Time,
