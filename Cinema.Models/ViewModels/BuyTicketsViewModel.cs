@@ -45,10 +45,13 @@ namespace Cinema.Models.ViewModels
 
 	public sealed class TicketInfo
 	{
+		[Display(Name = "Fila")]
 		public char Lane { get; set; } = '\0';
 
+		[Display(Name = "Numero")]
 		public int Number { get; set; } = 0;
 
-		public double Cost { get; set; } = 5.0d;
+		[Display(Name = "Costo")]
+		public double Cost { get; set; } = 0.0d;
 	}
 }
