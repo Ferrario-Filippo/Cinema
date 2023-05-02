@@ -3,7 +3,7 @@
 	ViewData["Title"] = $"Modifica Biglietto";
 }
 
-<form method="post" asp-action="Update">
+<form method="post" asp-action="Update" class="min-vh-100">
 	<input asp-for="NewTicket.ShowId" id="showInput" hidden />
 	<input asp-for="NewTicket.UserId" hidden />
 	<input asp-for="OldTicket.Lane" hidden />

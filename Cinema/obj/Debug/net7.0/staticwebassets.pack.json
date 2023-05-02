@@ -17,8 +17,28 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\ffili\\Desktop\\Informatica\\Quinta\\ASP.NET\\Cinema_Ferrario_Filippo\\Cinema\\Cinema\\wwwroot\\images\\film\\889c1a2a-6f36-40ea-9f03-583507230c09.jpg",
-      "PackagePath": "staticwebassets\\images\\film\\889c1a2a-6f36-40ea-9f03-583507230c09.jpg"
+      "Id": "C:\\Users\\ffili\\Desktop\\Informatica\\Quinta\\ASP.NET\\Cinema_Ferrario_Filippo\\Cinema\\Cinema\\wwwroot\\images\\film\\26ccb24e-d8f2-4ce0-bdb0-43c0ada06ba4.jpg",
+      "PackagePath": "staticwebassets\\images\\film\\26ccb24e-d8f2-4ce0-bdb0-43c0ada06ba4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ffili\\Desktop\\Informatica\\Quinta\\ASP.NET\\Cinema_Ferrario_Filippo\\Cinema\\Cinema\\wwwroot\\images\\film\\4ff7b3ff-c275-440c-bdba-ae74d4c1c75b.jpg",
+      "PackagePath": "staticwebassets\\images\\film\\4ff7b3ff-c275-440c-bdba-ae74d4c1c75b.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ffili\\Desktop\\Informatica\\Quinta\\ASP.NET\\Cinema_Ferrario_Filippo\\Cinema\\Cinema\\wwwroot\\images\\film\\65f17edb-e36e-4d65-b670-298b55c563e1.jpg",
+      "PackagePath": "staticwebassets\\images\\film\\65f17edb-e36e-4d65-b670-298b55c563e1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ffili\\Desktop\\Informatica\\Quinta\\ASP.NET\\Cinema_Ferrario_Filippo\\Cinema\\Cinema\\wwwroot\\images\\film\\6e20a699-afd1-462c-ac22-daf130a1aa3d.jpg",
+      "PackagePath": "staticwebassets\\images\\film\\6e20a699-afd1-462c-ac22-daf130a1aa3d.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ffili\\Desktop\\Informatica\\Quinta\\ASP.NET\\Cinema_Ferrario_Filippo\\Cinema\\Cinema\\wwwroot\\images\\film\\7fd76c1c-da51-4e14-9922-a17a16d81353.jpg",
+      "PackagePath": "staticwebassets\\images\\film\\7fd76c1c-da51-4e14-9922-a17a16d81353.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ffili\\Desktop\\Informatica\\Quinta\\ASP.NET\\Cinema_Ferrario_Filippo\\Cinema\\Cinema\\wwwroot\\images\\film\\980c6bf2-6397-43c4-afe5-b4196cc33928.jpg",
+      "PackagePath": "staticwebassets\\images\\film\\980c6bf2-6397-43c4-afe5-b4196cc33928.jpg"
     },
     {
       "Id": "C:\\Users\\ffili\\Desktop\\Informatica\\Quinta\\ASP.NET\\Cinema_Ferrario_Filippo\\Cinema\\Cinema\\wwwroot\\images\\site\\logo.png",
@@ -31,6 +51,10 @@
     {
       "Id": "C:\\Users\\ffili\\Desktop\\Informatica\\Quinta\\ASP.NET\\Cinema_Ferrario_Filippo\\Cinema\\Cinema\\wwwroot\\js\\buy.js",
       "PackagePath": "staticwebassets\\js\\buy.js"
+    },
+    {
+      "Id": "C:\\Users\\ffili\\Desktop\\Informatica\\Quinta\\ASP.NET\\Cinema_Ferrario_Filippo\\Cinema\\Cinema\\wwwroot\\js\\createShow.js",
+      "PackagePath": "staticwebassets\\js\\createShow.js"
     },
     {
       "Id": "C:\\Users\\ffili\\Desktop\\Informatica\\Quinta\\ASP.NET\\Cinema_Ferrario_Filippo\\Cinema\\Cinema\\wwwroot\\js\\editTicket.js",

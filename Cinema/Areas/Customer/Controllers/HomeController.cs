@@ -32,8 +32,7 @@ namespace Cinema.Areas.Customer.Controllers
 				.GroupBy(r => r.FilmId)
 				.Select(g => new { FilmId = g.Key, Rating = g.Average(r => r.Rating) });
 
-
-			var nextWeek = DateTime.Today.AddDays(7);
+			var nextWeek = DateTime.Today.AddDays(14);
 			var filmIds = _unitOfWork.Shows
 				.GetAll(s => s.Time >= DateTime.Today && s.Time < nextWeek)
 				.Select(s => s.FilmId)
@@ -63,7 +62,8 @@ namespace Cinema.Areas.Customer.Controllers
 			if (filmId is null || filmId is 0 || _unitOfWork.Films.GetFirstOrDefault(f => f.FilmId == filmId) is not Film film)
 				return RedirectToAction(nameof(Index));
 
-			var avgRating = _unitOfWork.Reviews.GetAll(r => r.FilmId == filmId).Average(r => r.Rating);
+			var ratings = _unitOfWork.Reviews.GetAll(r => r.FilmId == filmId);
+			var avgRating = ratings.Any() ? ratings.Average(r => r.Rating) : 1;
 			var tickets = _unitOfWork.Tickets.GetAll(t => t.UserId == null).GroupBy(t => t.ShowId);
 			var shows = _unitOfWork.Shows.GetAll(s => s.FilmId == filmId && s.Time >= DateTime.Today).ToDictionary(s => s.ShowId);
 			var rooms = shows.Values.DistinctBy(s => s.RoomId);

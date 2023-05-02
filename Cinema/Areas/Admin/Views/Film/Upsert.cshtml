@@ -3,7 +3,7 @@
 	ViewData["Title"] = $"Crea/Modifica {nameof(Film)}";
 }
 
-<form method="post" asp-action="Upsert" enctype="multipart/form-data">
+<form method="post" asp-action="Upsert" enctype="multipart/form-data" class="min-vh-100">
 	<input asp-for="Film.FilmId" hidden />
 	<input asp-for="Film.ImageUrl" hidden />
 	<div class="row">

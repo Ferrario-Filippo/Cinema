@@ -43,6 +43,12 @@ builder.Services.ConfigureApplicationCookie(options =>
 
 var app = builder.Build();
 
+using (var scope = app.Services.CreateScope())
+{
+	var services = scope.ServiceProvider;
+	Cinema.SeedHometowns.Initialize(services);
+}
+
 if (app.Environment.IsDevelopment())
 {
 	app.UseDeveloperExceptionPage();
