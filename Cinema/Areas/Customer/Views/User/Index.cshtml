@@ -6,13 +6,74 @@
 <div class="container row g-1 min-vh-100">
 	<div class="col-lg-4">
 		<h3 class="text-center">Film Visti</h3>
-		<div class="d-flex flex-column">
+		<div class="d-flex flex-column g-2">
 			@foreach (var item in Model.FilmsWatched)
 			{
 				<div class="card p-2">
-					<img src="..\..\@item.ImageUrl" class="card-img-top rounded" />
+					<img src="..\..\@item.Film.ImageUrl" class="card-img-top rounded" />
 					<div class="card-body">
-						<p class="card-title text-primary">@item.Title</p>
+						<p class="card-title text-primary">@item.Film.Title</p>
+					</div>
+					<div class="card-footer justify-content-center d-inline-flex" role="radiogroup" id="@item.Film.FilmId">
+						<input type="radio" id="star-1" value="1" class="d-none" onclick="onRadioSelectChanged(this)" />
+						<label for="star-1" class=" d-inline-flex">
+							@if (item.Rating > 0)
+							{
+								<i class="yellow icon d-inline-block bi-star-fill"></i>
+							}
+							else
+							{
+								<i class="yellow icon d-inline-block bi-star"></i>
+							}
+						</label>
+
+						<input type="radio" id="star-2" value="2" class="d-none" onclick="onRadioSelectChanged(this)" />
+						<label for="star-2" class=" d-inline-flex">
+							@if (item.Rating > 1)
+							{
+								<i class="yellow icon d-inline-block bi-star-fill"></i>
+							}
+							else
+							{
+								<i class="yellow icon d-inline-block bi-star"></i>
+							}
+						</label>
+
+						<input type="radio" id="star-3" value="3" class="d-none" onclick="onRadioSelectChanged(this)" />
+						<label for="star-3" class=" d-inline-flex">
+							@if (item.Rating > 2)
+							{
+								<i class="yellow icon d-inline-block bi-star-fill"></i>
+							}
+							else
+							{
+								<i class="yellow icon d-inline-block bi-star"></i>
+							}
+						</label>
+
+						<input type="radio" id="star-4" value="4" class="d-none" onclick="onRadioSelectChanged(this)" />
+						<label for="star-4" class="d-inline-flex">
+							@if (item.Rating > 3)
+							{
+								<i class="yellow icon d-inline-block bi-star-fill"></i>
+							}
+							else
+							{
+								<i class="yellow icon d-inline-block bi-star"></i>
+							}
+						</label>
+
+						<input type="radio" id="star-5" value="5" class="d-none" onclick="onRadioSelectChanged(this)" />
+						<label for="star-5" class="d-inline-flex">
+							@if (item.Rating > 4)
+							{
+								<i class="yellow icon d-inline-block bi-star-fill"></i>
+							}
+							else
+							{
+								<i class="yellow icon d-inline-block bi-star"></i>
+							}
+						</label>
 					</div>
 				</div>
 			}
@@ -20,7 +81,7 @@
 	</div>
 	<div class="col-lg-4">
 		<h3 class="text-center">Biglietti Acquistati</h3>
-		<div class="d-flex flex-column">
+		<div class="d-flex flex-column g-2">
 			@foreach (var item in Model.NonRefundableTickets)
 			{
 				<div class="card">
@@ -38,7 +99,7 @@
 	</div>
 	<div class="col-lg-4">
 		<h3 class="text-center">Biglietti Rimborsabili</h3>
-		<div class="d-flex flex-column">
+		<div class="d-flex flex-column g-2">
 			@foreach (var item in Model.RefundableTickets)
 			{
 				<div class="card">
@@ -59,3 +120,6 @@
 		</div>
 	</div>
 </div>
+<section Scripts>
+	<script src="~/js/user.js"></script>
+</section>

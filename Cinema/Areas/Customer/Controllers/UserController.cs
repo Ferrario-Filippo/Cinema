@@ -49,7 +49,15 @@ namespace Cinema.Areas.Customer.Controllers
 					nonRefundable.Add(ticket);
 			}
 
-			var filmsWatched = nonRefundable.Select(t => t.Show.Film).Distinct();
+			var filmsWatched =
+				from film in nonRefundable.Select(t => t.Show.Film).Distinct()
+				join rating in _unitOfWork.Reviews.GetAll(r => r.UserId == claim!.Value) on film.FilmId equals rating.FilmId into fr
+				from ratedFilms in fr.DefaultIfEmpty()
+				select new UserReviewViewModel()
+				{
+					Film = film,
+					Rating = ratedFilms?.Rating ?? 0
+				};
 
 			return View(new UserHistoryViewModel()
 			{
@@ -98,7 +106,7 @@ namespace Cinema.Areas.Customer.Controllers
 				return View(ticket);
 
 			IdentityHelpers.TryGetUserIdentity(User, out var identity);
-			if (ticket.NewTicket.UserId == identity!.Value && 
+			if (ticket.NewTicket.UserId == identity!.Value &&
 				_unitOfWork.ApplicationUsers.GetFirstOrDefault(u => u.Id == identity.Value) is User user)
 			{
 				var oldTicket = _unitOfWork.Tickets.GetFirstOrDefault(t =>
@@ -157,6 +165,36 @@ namespace Cinema.Areas.Customer.Controllers
 			_unitOfWork.Save();
 
 			return RedirectToAction(nameof(Index));
+		}
+
+		public IActionResult SaveReview(int? filmId, int? rating)
+		{
+			if (
+				filmId is null || filmId is 0 ||
+				rating < 1 || rating > 5 ||
+				!IdentityHelpers.TryGetUserIdentity(User, out var identity)
+				)
+				return Json(new { Success = false });
+
+			var reviewInDb = _unitOfWork.Reviews.GetFirstOrDefault(r => r.FilmId == filmId && r.UserId == identity!.Value);
+
+			if (reviewInDb is null)
+			{
+				_unitOfWork.Reviews.Add(new Review()
+				{
+					FilmId = (int)filmId,
+					UserId = identity!.Value,
+					Rating = (byte)rating!
+				});
+			}
+			else
+			{
+				reviewInDb.Rating = (byte)rating!;
+				_unitOfWork.Reviews.Update(reviewInDb);
+			}
+
+			_unitOfWork.Save();
+			return Json(new { Success = true });
 		}
 	}
 }

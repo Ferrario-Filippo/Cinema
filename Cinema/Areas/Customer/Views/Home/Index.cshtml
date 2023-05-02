@@ -36,11 +36,11 @@
 									@{
 										var i = 0;
 									}
-									@for (; i < filmViewModel.Rating - 1; i++)
+									@for (; i < filmViewModel.Rating; i++)
 									{
 										<i class="bi-star-fill yellow icon"></i>
 									}
-									@if (i != 5 && ((filmViewModel.Rating - i) > 0.25d || (filmViewModel.Rating - i) < 0.75d))
+									@if (i != 5 && ((filmViewModel.Rating - i) > 0.25d && (filmViewModel.Rating - i) < 0.75d))
 									{
 										i++;
 										<i class="bi-star-half yellow icon"></i>

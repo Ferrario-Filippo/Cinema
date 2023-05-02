@@ -101,6 +101,10 @@
       "PackagePath": "staticwebassets\\js\\tickets.js"
     },
     {
+      "Id": "C:\\Users\\ffili\\Desktop\\Informatica\\Quinta\\ASP.NET\\Cinema_Ferrario_Filippo\\Cinema\\Cinema\\wwwroot\\js\\user.js",
+      "PackagePath": "staticwebassets\\js\\user.js"
+    },
+    {
       "Id": "C:\\Users\\ffili\\Desktop\\Informatica\\Quinta\\ASP.NET\\Cinema_Ferrario_Filippo\\Cinema\\Cinema\\wwwroot\\lib\\DataTables\\Buttons-2.3.6\\css\\buttons.bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\DataTables\\Buttons-2.3.6\\css\\buttons.bootstrap.css"
     },

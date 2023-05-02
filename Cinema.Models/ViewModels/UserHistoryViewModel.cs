@@ -6,6 +6,6 @@
 
         public IEnumerable<Ticket> NonRefundableTickets { get; set; } = null!;
 
-        public IEnumerable<Film> FilmsWatched { get; set; } = null!;
+        public IEnumerable<UserReviewViewModel> FilmsWatched { get; set; } = null!;
     }
 }
