@@ -4,12 +4,14 @@ function onRadioSelectChanged(sender) {
 	const value = sender.value;
 
 	var i = 0;
+	console.log(value);
 	for (; i < value; i++) {
 		const starIndex = i * 2 + 1;
 		container.children[starIndex].children[0].classList.remove('bi-star');
 		container.children[starIndex].children[0].classList.add('bi-star-filled');
 	}
 	for (; i < 5; i++) {
+		console.log(i);
 		const starIndex = i * 2 + 1;
 		container.children[starIndex].children[0].classList.remove('bi-star-filled');
 		container.children[starIndex].children[0].classList.add('bi-star');

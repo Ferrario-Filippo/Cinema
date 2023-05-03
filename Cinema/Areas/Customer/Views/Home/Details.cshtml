@@ -11,7 +11,7 @@
         <div class="card-header bg-primary text-light ml-0 row pt-3">
             <div class="col-12 col-md-6">
                 <h1 class="text-white-50">@Model.Film.Title</h1>
-                <p class="text-white">Durata: @Model.Film.Duration</p>
+                <p class="text-white">Durata: @Model.Film.Duration minuti</p>
             </div>
             <div class="pl-1 d-flex flex-row">
                 Valutazione:
@@ -19,11 +19,11 @@
                     @{
                         var i = 0;
                     }
-                    @for (; i < Model.Rating - 1; i++)
+                    @for (; i < Model.Rating; i++)
                     {
                         <i class="bi-star-fill yellow icon"></i>
                     }
-                    @if (i != 5 && ((Model.Rating - i) > 0.25d || (Model.Rating - i) < 0.75d))
+                    @if (i != 5 && ((Model.Rating - i) > 0.25d && (Model.Rating - i) < 0.75d))
                     {
                         i++;
                         <i class="bi-star-half yellow icon"></i>

@@ -1,80 +1,84 @@
 html {
-  font-size: 14px;
+	font-size: 14px;
 }
 
 
 html {
-    position: relative;
-    min-height: 100%;
+	position: relative;
+	min-height: 100%;
 }
 
 body {
-    margin-bottom: 60px;
+	margin-bottom: 60px;
 }
 
 .yellow {
-    color: #f2b969;
+	color: #f2b969;
 }
 
 .black {
-    color: #000;
+	color: #000;
 }
 
 .icon {
-    height: 20px;
-    width: 20px;
+	height: 20px;
+	width: 20px;
 }
 
 .spacer {
-    height: 64px;
+	height: 64px;
 }
 
 .seat-img {
-    height: 24px;
-    width: 24px;
-    opacity: 0.7;
+	height: 24px;
+	width: 24px;
+	opacity: 0.7;
 }
 
 .unavailable-seat {
-    opacity: 0.3;
+	opacity: 0.3;
 }
 
-.seat { 
-    background: #00000000;
-    border: 0px;
-    padding: 0px;
+.seat {
+	background: #00000000;
+	border: 0px;
+	padding: 0px;
 }
 
 .selected-seat {
-    opacity: 1.0;
+	opacity: 1.0;
 }
 
 .seats-section {
-    display: none;
+	display: none;
 }
 
 .alternative-seats-section {
-    display: flex;
+	display: flex;
 }
 
 .film-card { }
 
 .show-card { }
 
+.film-card :hover {
+	transform: scale(1.005);
+}
+
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+	html {
+		font-size: 16px;
+	}
 
-  .spacer {
-      height: 0px;
-  }
+	.spacer {
+		height: 0px;
+	}
 
-  .seats-section {
-      display: flex;
-  }
+	.seats-section {
+		display: flex;
+	}
 
-  .alternative-seats-section {
-      display: none;
-  }
+	.alternative-seats-section {
+		display: none;
+	}
 }

@@ -14,24 +14,24 @@
 					<hr />
 				</div>
 				<div asp-validation-summary="All"></div>
-				<div class="row mb-3">
+				<div class="row mb-3 ms-2">
 					<label asp-for="Film.Title"></label>
-					<input asp-for="Film.Title" class="form-cotrol" />
+					<input asp-for="Film.Title" class="form-control" />
 					<span asp-validation-for="Film.Title" class="text-danger"></span>
 				</div>
-				<div class="row mb-3">
+				<div class="row mb-3 ms-2">
 					<label asp-for="Film.Description"></label>
-					<textarea asp-for="Film.Description" rows="3" class="form-cotrol"></textarea>
+					<textarea asp-for="Film.Description" rows="3" class="form-control"></textarea>
 					<span asp-validation-for="Film.Description" class="text-danger"></span>
 				</div>
 				<div class="row mb-3 col-6 ms-2">
 					<label asp-for="Film.Duration"></label>
-					<input asp-for="Film.Duration" class="form-cotrol" />
+					<input asp-for="Film.Duration" class="form-control" />
 					<span asp-validation-for="Film.Duration" class="text-danger"></span>
 				</div>
 				<div class="row mb-3 col-6">
 					<label asp-for="Film.Year"></label>
-					<input asp-for="Film.Year" class="form-cotrol" />
+					<input asp-for="Film.Year" class="form-control" />
 					<span asp-validation-for="Film.Year" class="text-danger"></span>
 				</div>
 				<div class="row mb-3 col-6 ms-2">
@@ -41,9 +41,9 @@
 					</select>
 					<span asp-validation-for="Film.Genre" class="text-danger"></span>
 				</div>
-				<div class="row mb-3">
+				<div class="row mb-3 ms-2">
 					<label asp-for="Film.ImageUrl"></label>
-					<input type="file" id="uploadBox" name="file" class="form-cotrol" />
+					<input type="file" id="uploadBox" name="file" class="form-control" />
 				</div>
 				<div class="col-12">
 					@if (Model.Film.FilmId is not 0)
@@ -62,7 +62,7 @@
 			<div class="col-2 pt-2">
 				@if (Model.Film.ImageUrl is not null)
 				{
-					<img src="@Model.Film.ImageUrl" style="width:100%; border-radius:5px; border:1px solid #bbb9b9" />
+					<img src="~/@Model.Film.ImageUrl" style="width:100%; border-radius:5px; border:1px solid #bbb9b9" />
 				}
 			</div>
 		</div>

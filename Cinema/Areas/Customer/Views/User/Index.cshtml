@@ -3,7 +3,7 @@
 	ViewData["Title"] = "Profilo";
 }
 
-<div class="container row g-1 min-vh-100">
+<div class="container row g-1 min-vh-100 mb-5">
 	<div class="col-lg-4">
 		<h3 class="text-center">Film Visti</h3>
 		<div class="d-flex flex-column g-2">
@@ -81,12 +81,12 @@
 	</div>
 	<div class="col-lg-4">
 		<h3 class="text-center">Biglietti Acquistati</h3>
-		<div class="d-flex flex-column g-2">
+		<div class="d-flex flex-column">
 			@foreach (var item in Model.NonRefundableTickets)
 			{
-				<div class="card">
-					<div class="card-body">
-						<p class="card-title text-primary">@item.Show.Film.Title</p>
+				<div class="card m-1">
+					<div class="card-body p-1">
+						<p class="card-title text-primary text-center">@item.Show.Film.Title</p>
 						<div class="card-title text-info">
 							Durata: @item.Show.Time <br />
 							Posto: @item.Lane-@item.Number
@@ -99,12 +99,12 @@
 	</div>
 	<div class="col-lg-4">
 		<h3 class="text-center">Biglietti Rimborsabili</h3>
-		<div class="d-flex flex-column g-2">
+		<div class="d-flex flex-column">
 			@foreach (var item in Model.RefundableTickets)
 			{
-				<div class="card">
-					<div class="card-body">
-						<p class="card-title text-primary">@item.Show.Film.Title</p>
+				<div class="card m-1">
+					<div class="card-body p-1">
+						<p class="card-title text-primary text-center">@item.Show.Film.Title</p>
 						<div class="card-title text-info">
 							Durata: @item.Show.Time <br />
 							Posto: @item.Lane-@item.Number
