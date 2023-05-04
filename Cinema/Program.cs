@@ -1,10 +1,11 @@
 using Cinema.DataAccess;
 using Cinema.DataAccess.Repository;
 using Cinema.DataAccess.Repository.Interfaces;
-using Cinema.Helpers;
+using Cinema.Helpers.Email;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
+using Stripe;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,7 +24,9 @@ builder.Services.AddDbContext<CinemaDbContext>(
 #endif
 );
 
-builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+builder.Services.Configure<EmailSenderOptions>(builder.Configuration.GetSection("EmailSender"));
+
+builder.Services.AddIdentity<IdentityUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
 	.AddDefaultTokenProviders()
 	.AddEntityFrameworkStores<CinemaDbContext>();
 
@@ -58,6 +61,10 @@ else
 	app.UseExceptionHandler("/Home/Error");
 	app.UseHsts();
 }
+
+StripeConfiguration.ApiKey = builder.Configuration
+	.GetSection("Stripe:SecretKey")
+	.Get<string>();
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

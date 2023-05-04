@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Cinema.Models.ViewModels
 {
-	public class ShowViewModel
+	public sealed class ShowViewModel
 	{
 		public Show Show { get; set; } = null!;
 

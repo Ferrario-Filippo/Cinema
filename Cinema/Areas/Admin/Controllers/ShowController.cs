@@ -5,6 +5,7 @@ using Cinema.Models.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using static Cinema.Constants.Areas;
 using static Cinema.Constants.Messages;
 using static Cinema.Constants.Roles;
@@ -57,6 +58,17 @@ namespace Cinema.Areas.Admin.Controllers
 		{
 			if (!ModelState.IsValid)
 				return View(showViewModel);
+
+			bool isRoomAvailable = _unitOfWork.Shows
+				.GetFirstOrDefault(s => 
+					s.RoomId == showViewModel.Show.RoomId &&
+					s.Time == showViewModel.Show.Time) is null;
+
+			if (!isRoomAvailable)
+			{
+				TempData["error"] = UNAVAILABLE_ROOM;
+				return View(showViewModel);
+			}
 
 			if (showViewModel.Show.ShowId is 0)
 			{

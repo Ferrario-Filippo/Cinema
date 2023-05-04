@@ -587,3 +587,7 @@ C:\Users\ffili\Desktop\Informatica\Quinta\ASP.NET\Cinema_Ferrario_Filippo\Cinema
 C:\Users\ffili\Desktop\Informatica\Quinta\ASP.NET\Cinema_Ferrario_Filippo\Cinema\Cinema\obj\Debug\net7.0\ref\Cinema.dll
 C:\Users\ffili\Desktop\Informatica\Quinta\ASP.NET\Cinema_Ferrario_Filippo\Cinema\Cinema\bin\Debug\net7.0\Cinema.Helpers.dll
 C:\Users\ffili\Desktop\Informatica\Quinta\ASP.NET\Cinema_Ferrario_Filippo\Cinema\Cinema\bin\Debug\net7.0\Cinema.Helpers.pdb
+C:\Users\ffili\Desktop\Informatica\Quinta\ASP.NET\Cinema_Ferrario_Filippo\Cinema\Cinema\bin\Debug\net7.0\BouncyCastle.Cryptography.dll
+C:\Users\ffili\Desktop\Informatica\Quinta\ASP.NET\Cinema_Ferrario_Filippo\Cinema\Cinema\bin\Debug\net7.0\MailKit.dll
+C:\Users\ffili\Desktop\Informatica\Quinta\ASP.NET\Cinema_Ferrario_Filippo\Cinema\Cinema\bin\Debug\net7.0\MimeKit.dll
+C:\Users\ffili\Desktop\Informatica\Quinta\ASP.NET\Cinema_Ferrario_Filippo\Cinema\Cinema\bin\Debug\net7.0\Stripe.net.dll

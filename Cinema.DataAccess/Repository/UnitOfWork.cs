@@ -19,7 +19,11 @@ namespace Cinema.DataAccess.Repository
 		
 		public IRepository<Ticket> Tickets { get; init; }
 		
-		public IRepository<Hometown> Towns { get; init; }		
+		public IRepository<Hometown> Towns { get; init; }
+
+		public IRepository<PendingTicket> PendingTickets { get; init; }
+		
+		public IOrdersRepository Orders { get; init; }
 
 		public UnitOfWork(CinemaDbContext db)
 		{
@@ -32,6 +36,8 @@ namespace Cinema.DataAccess.Repository
 			Rooms = new RoomsRepository(db);
 			Tickets = new TicketsRepository(db);
 			Towns = new TownsRepository(db);
+			PendingTickets = new PendingTicketsRepository(db);
+			Orders = new OrdersRepository(db);
 		}
 
 		public void Save()

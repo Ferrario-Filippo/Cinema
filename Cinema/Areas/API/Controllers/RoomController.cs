@@ -6,7 +6,7 @@ namespace Cinema.Areas.API.Controllers
 {
 	[Area(Constants.Areas.API)]
 	[Authorize]
-	public class RoomController : Controller
+	public sealed class RoomController : Controller
 	{
 		private readonly IUnitOfWork _unitOfWork;
 

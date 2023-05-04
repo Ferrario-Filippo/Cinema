@@ -21,6 +21,10 @@ namespace Cinema.DataAccess
 
 		public DbSet<Hometown> Towns { get; set; } = null!;
 
+		public DbSet<PendingTicket> PendingTickets { get; set; }
+
+		public DbSet<Order> Orders { get; set; } = null!;
+
 		public CinemaDbContext(DbContextOptions<CinemaDbContext> options) : base(options) { }
 
 		protected override void OnModelCreating(ModelBuilder builder)
@@ -57,6 +61,9 @@ namespace Cinema.DataAccess
 				.HasOne(r => r.Film)
 				.WithMany(f => f.Reviews)
 				.HasForeignKey(r => r.FilmId);
+
+			builder.Entity<PendingTicket>()
+				.HasKey(pt => new { pt.ShowId, pt.Lane, pt.Number, pt.OrderId });
 		}
 	}
 }

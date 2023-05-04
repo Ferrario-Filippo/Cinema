@@ -18,6 +18,10 @@ namespace Cinema.DataAccess.Repository.Interfaces
 
 		IRepository<Hometown> Towns { get; }
 
+		IRepository<PendingTicket> PendingTickets { get; }
+
+		IOrdersRepository Orders { get; }
+
 		void Save();
 	}
 }

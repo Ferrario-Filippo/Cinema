@@ -29,5 +29,7 @@
 		public const string INVALID_NUMBER = "Il numero della carta non è valido";
 
 		public const string PAYMENT_REFUSED = "Pagamento rifiutato";
+
+		public const string UNAVAILABLE_ROOM = "La sala è già occupata nella data selezionata";
 	}
 }

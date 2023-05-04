@@ -212,8 +212,17 @@ namespace Cinema.Areas.Identity.Pages.Account
                 }
             }
 
-            // If we got this far, something failed, redisplay form
-            return Page();
+			// If we got this far, something failed, redisplay form
+			Input = new InputModel()
+			{
+				GenderList = Helpers.EnumHelpers.GetGenders(),
+				TownsList = _unitOfWork.Towns
+				   .GetAll()
+				   .Select(t =>
+					   new SelectListItem(t.Name, t.HometownId.ToString())
+				   )
+			};
+			return Page();
         }
 
         private User CreateUser()

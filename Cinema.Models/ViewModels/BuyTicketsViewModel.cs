@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Cinema.Models.ViewModels
 {
-	public class BuyTicketsViewModel
+	public sealed class BuyTicketsViewModel
 	{
 		[ValidateNever]
 		public string FilmTitle { get; set; } = null!;

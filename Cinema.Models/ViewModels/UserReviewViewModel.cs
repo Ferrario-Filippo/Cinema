@@ -1,6 +1,6 @@
 ﻿namespace Cinema.Models.ViewModels
 {
-	public class UserReviewViewModel
+	public sealed class UserReviewViewModel
 	{
 		public Film Film { get; set; } = null!;
 
