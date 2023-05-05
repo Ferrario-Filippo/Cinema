@@ -30,14 +30,6 @@ $(document).ready(function () {
 	onLoad();
 });
 
-function onPaymentChanged() {
-	const selection = $('#paymentSelect').val();
-	const isResidual = selection === 'Residual';
-	const displayPaymentForm = isResidual ? 'none' : 'flex';
-
-	$('#ccInfo')[0].style.setProperty('display', displayPaymentForm, 'important');
-}
-
 function onSeatClicked(sender) {
 	if (selectedSeats.length !== 0) {
 		const itemIndex = selectedSeats.indexOf(sender.id);

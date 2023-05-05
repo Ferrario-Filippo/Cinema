@@ -50,6 +50,7 @@ using (var scope = app.Services.CreateScope())
 {
 	var services = scope.ServiceProvider;
 	Cinema.SeedHometowns.Initialize(services);
+	Cinema.SeedAdmin.Initialize(services);
 }
 
 if (app.Environment.IsDevelopment())

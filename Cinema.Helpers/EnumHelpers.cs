@@ -55,24 +55,5 @@ namespace Cinema.Helpers
                     genders[i]);
             }
         }
-
-		private static IImmutableDictionary<string, string> _paymentITLocalization = new Dictionary<string, string>()
-		{
-			{ "Residual", "Credito" },
-			{ "Credit", "Carta di credito" },
-			{ "Debit", "Carta di debito" },
-			{ "PayPal", "PayPal" }
-		}.ToImmutableDictionary();
-
-		public static IEnumerable<SelectListItem> GetPayments()
-		{
-			var methods = Enum.GetNames(typeof(Payment));
-			for (int i = 0; i < methods.Length; i++)
-			{
-				yield return new SelectListItem(
-					_paymentITLocalization[methods[i]],
-					methods[i]);
-			}
-		}
 	}
 }

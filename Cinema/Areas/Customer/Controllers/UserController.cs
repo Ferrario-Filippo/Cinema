@@ -156,12 +156,16 @@ namespace Cinema.Areas.Customer.Controllers
 				t.Number == number
 				);
 
-			if (ticket is null)
+			var user = _unitOfWork.ApplicationUsers.GetFirstOrDefault(u => u.Id == identity!.Value);
+
+			if (ticket is null || user is null)
 				return NotFound();
 
 			ticket.UserId = null;
+			user.Credit += ticket.Cost;
 
 			_unitOfWork.Tickets.Update(ticket);
+			_unitOfWork.ApplicationUsers.Update(user);
 			_unitOfWork.Save();
 
 			return RedirectToAction(nameof(Index));

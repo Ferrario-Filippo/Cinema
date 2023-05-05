@@ -22,12 +22,6 @@
 
 		public const string TICKETS_NO_AVAILABLE = "I biglietti selezionati non sono più disponibili";
 
-		public const string RESIDUAL_NOT_SUFFICIENT = "Il credito non è sufficiente";
-
-		public const string INVALID_EXPIRATION = "La scadenza non è valida";
-
-		public const string INVALID_NUMBER = "Il numero della carta non è valido";
-
 		public const string PAYMENT_REFUSED = "Pagamento rifiutato";
 
 		public const string UNAVAILABLE_ROOM = "La sala è già occupata nella data selezionata";

@@ -106,7 +106,6 @@ namespace Cinema.Areas.Customer.Controllers
 				Capacity = show.Room.Seats,
 				FilmTitle = viewModel.Film.Title,
 				Date = show.Time,
-				PaymentMethods = EnumHelpers.GetPayments(),
 				Tickets = new List<TicketInfo>() { new(), new(), new(), new() }
 			};
 
@@ -151,30 +150,14 @@ namespace Cinema.Areas.Customer.Controllers
 
 			var totalCost = tickets.Sum(t => t.Cost);
 
-			if (viewModel.ChosenPayment is Payment.Residual)
+			if (totalCost < user.Credit)
 			{
-				if (totalCost > user.Credit)
-				{
-					ViewData["error"] = RESIDUAL_NOT_SUFFICIENT;
-					return View(viewModel);
-				}
-
 				user.Credit -= totalCost;
 				_unitOfWork.ApplicationUsers.Update(user);
 
 				SendConfirmationEmail(user, viewModel.ShowId, tickets);
 
 				return RedirectToAction(nameof(Index));
-			}
-			else if (!CreditCardHelpers.IsCreditCardValid(
-				viewModel.NameOnCard,
-				viewModel.CardNumber,
-				viewModel.Expire,
-				viewModel.CCV,
-				out var message))
-			{
-				ViewData["error"] = message;
-				return View(viewModel);
 			}
 
 			var order = new Order()
