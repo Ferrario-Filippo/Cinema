@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\Cinema.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\ffili\\Desktop\\Informatica\\Quinta\\ASP.NET\\Cinema_Ferrario_Filippo\\Cinema\\Cinema\\wwwroot\\comuni.txt",
+      "PackagePath": "staticwebassets\\comuni.txt"
+    },
+    {
       "Id": "C:\\Users\\ffili\\Desktop\\Informatica\\Quinta\\ASP.NET\\Cinema_Ferrario_Filippo\\Cinema\\Cinema\\wwwroot\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
     },

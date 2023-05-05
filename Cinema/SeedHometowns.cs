@@ -14,7 +14,15 @@ namespace Cinema
 			if (unitOfWork is null || unitOfWork.Towns is null || unitOfWork.Towns.Any())
 				return;
 
-			using (var reader = new StreamReader("./comuni.txt"))
+			string path =
+#if DEBUG
+				"./wwwroot/comuni.txt"
+#else
+				"./comuni.txt"
+#endif
+				;
+
+			using (var reader = new StreamReader(path))
 			{
 				while (!reader.EndOfStream)
 				{
