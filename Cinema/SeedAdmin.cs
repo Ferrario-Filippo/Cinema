@@ -18,10 +18,10 @@ namespace Cinema
 			if (unitOfWork is null || unitOfWork.ApplicationUsers is null || unitOfWork.ApplicationUsers.Any())
 				return;
 
-			using var userManager = provider.GetRequiredService<UserManager<IdentityUser>>();
-			using var roleManager = provider.GetRequiredService<RoleManager<IdentityRole>>();
-			using var userStore = provider.GetRequiredService<IUserStore<IdentityUser>>();
-			using var emailStore = (IUserEmailStore<IdentityUser>)userStore;
+			var userManager = provider.GetRequiredService<UserManager<IdentityUser>>();
+			var roleManager = provider.GetRequiredService<RoleManager<IdentityRole>>();
+			var userStore = provider.GetRequiredService<IUserStore<IdentityUser>>();
+			var emailStore = (IUserEmailStore<IdentityUser>)userStore;
 
 			var user = Activator.CreateInstance<User>();
 
