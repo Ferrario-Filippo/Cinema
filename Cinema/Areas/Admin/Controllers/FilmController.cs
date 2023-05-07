@@ -91,7 +91,7 @@ namespace Cinema.Areas.Admin.Controllers
 				{
 					film.FilmId,
 					film.Title,
-					Description = film.Description[..30],
+					Description = film.Description.Length >= 30 ? film.Description[..30] : film.Description,
 					film.Duration,
 					film.Genre,
 					film.Year,

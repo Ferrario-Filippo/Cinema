@@ -154,7 +154,13 @@ namespace Cinema.Areas.Customer.Controllers
 			{
 				user.Credit -= totalCost;
 				_unitOfWork.ApplicationUsers.Update(user);
+				tickets.ForEach(t =>
+				{
+					t.UserId = identity!.Value;
+					_unitOfWork.Tickets.Update(t);
+				});
 
+				_unitOfWork.Save();
 				SendConfirmationEmail(user, viewModel.ShowId, tickets);
 
 				return RedirectToAction(nameof(Index));
@@ -163,7 +169,7 @@ namespace Cinema.Areas.Customer.Controllers
 			var order = new Order()
 			{
 				UserId = user.Id,
-				OrderTotal = totalCost
+				OrderTotal = totalCost,
 			};
 
 			_unitOfWork.Orders.Add(order);
@@ -184,8 +190,12 @@ namespace Cinema.Areas.Customer.Controllers
 			_unitOfWork.Save();
 
 			var filmName = _unitOfWork.Shows.GetFirstOrDefault(s => s.ShowId == viewModel.ShowId, "Film")?.Film.Title ?? string.Empty;
+			var savedOrder = _unitOfWork.Orders.GetFirstOrDefault(o =>
+				o.UserId == identity!.Value &&
+				o.OrderDate.Date == DateTime.Today &&
+				o.OrderStatus == OrderStatus.PENDING)!;
 
-			return ExecuteStripePayment(tickets, filmName, order.Id);
+			return ExecuteStripePayment(tickets, filmName, savedOrder.Id);
 		}
 
 		public IActionResult OrderConfirmation(int orderId)
@@ -208,13 +218,15 @@ namespace Cinema.Areas.Customer.Controllers
 				return RedirectToAction(nameof(Index));
 			}
 
+			var ticketsCopy = pending.ToList();
+
 			_unitOfWork.Orders.UpdateStatus(orderId, OrderStatus.APPROVED, PaymentStatus.APPROVED);
 			_unitOfWork.Orders.UpdateStripePaymentIntentId(orderId, session.PaymentIntentId);
 			_unitOfWork.PendingTickets.RemoveRange(pending);
 			_unitOfWork.Save();
 
 			var user = _unitOfWork.ApplicationUsers.GetFirstOrDefault(u => u.Id == order.UserId);
-			SendConfirmationEmail(user!, pending.ElementAt(0).ShowId, pending: pending);
+			SendConfirmationEmail(user!, ticketsCopy[0].ShowId, pending: ticketsCopy);
 
 			return View(orderId);
 		}
@@ -240,7 +252,7 @@ namespace Cinema.Areas.Customer.Controllers
 			{
 				LineItems = new List<SessionLineItemOptions>(),
 				Mode = "payment",
-				SuccessUrl = domain + $"Customer/Home/OrderConfirmation?id={orderId}",
+				SuccessUrl = domain + $"Customer/Home/OrderConfirmation?orderId={orderId}",
 				CancelUrl = domain + $"Customer/Home/Index",
 			};
 
