@@ -13,9 +13,9 @@
 					<hr />
 				</div>
 				<div asp-validation-summary="All"></div>
-				<div class="row mb-3 col-sm-3">
-					<label asp-for="HasISense"></label>
-					<input asp-for="HasISense" class="form-control" />
+				<div class="mb-3 col-sm-3 form-check">
+					<label asp-for="HasISense" for="hasISenseCheck" class="form-check-label"></label>
+					<input asp-for="HasISense" class="form-check-input" type="checkbox" id="hasISenseCheck" />
 					<span asp-validation-for="HasISense" class="text-danger"></span>
 				</div>
 				<div class="row mb-3">
