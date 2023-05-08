@@ -25,5 +25,7 @@
 		public const string PAYMENT_REFUSED = "Pagamento rifiutato";
 
 		public const string UNAVAILABLE_ROOM = "La sala è già occupata nella data selezionata";
+
+		public const string TOO_MANY_TICKETS = "Puoi acquistare solo 4 biglietti per ogni proiezione!";
 	}
 }

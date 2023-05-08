@@ -143,6 +143,16 @@ namespace Cinema.Areas.Customer.Controllers
 				}
 			}
 
+			var ownedTicketsCount = _unitOfWork.Tickets
+				.GetAll(t => t.ShowId == viewModel.ShowId && t.UserId == identity!.Value)
+				.Count();
+
+			if (ownedTicketsCount + tickets.Count > 4)
+			{
+				ViewData["error"] = TOO_MANY_TICKETS;
+				return View(viewModel);
+			}
+
 			var user = _unitOfWork.ApplicationUsers.GetFirstOrDefault(u => u.Id == identity!.Value);
 
 			if (user is null)
