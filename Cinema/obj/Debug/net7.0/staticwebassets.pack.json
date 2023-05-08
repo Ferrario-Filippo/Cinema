@@ -13,10 +13,6 @@
       "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\ffili\\Desktop\\Informatica\\Quinta\\ASP.NET\\Cinema_Ferrario_Filippo\\Cinema\\Cinema\\wwwroot\\css\\mint.bootstrap.min.css",
-      "PackagePath": "staticwebassets\\css\\mint.bootstrap.min.css"
-    },
-    {
       "Id": "C:\\Users\\ffili\\Desktop\\Informatica\\Quinta\\ASP.NET\\Cinema_Ferrario_Filippo\\Cinema\\Cinema\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "pm+03aGJ0m1Ej5fopeqWPxVAsfdYnMqDpkNpfEe7NAg=",
+  "Hash": "xcxuUg0OY2eON4IS/V1hR8p58Q3iwwzUm0UrmEBa/d8=",
   "Source": "Cinema",
   "BasePath": "_content/Cinema",
   "Mode": "Default",
@@ -1103,23 +1103,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\bootstrap.min.css"
-    },
-    {
-      "Identity": "C:\\Users\\ffili\\Desktop\\Informatica\\Quinta\\ASP.NET\\Cinema_Ferrario_Filippo\\Cinema\\Cinema\\wwwroot\\css\\mint.bootstrap.min.css",
-      "SourceId": "Cinema",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ffili\\Desktop\\Informatica\\Quinta\\ASP.NET\\Cinema_Ferrario_Filippo\\Cinema\\Cinema\\wwwroot\\",
-      "BasePath": "_content/Cinema",
-      "RelativePath": "css/mint.bootstrap.min.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\mint.bootstrap.min.css"
     },
     {
       "Identity": "C:\\Users\\ffili\\Desktop\\Informatica\\Quinta\\ASP.NET\\Cinema_Ferrario_Filippo\\Cinema\\Cinema\\wwwroot\\css\\site.css",

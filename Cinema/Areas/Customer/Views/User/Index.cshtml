@@ -15,8 +15,8 @@
 						<p class="card-title text-primary">@item.Film.Title</p>
 					</div>
 					<div class="card-footer justify-content-center d-inline-flex" role="radiogroup" id="@item.Film.FilmId">
-						<input type="radio" id="star-1" value="1" class="d-none" onclick="onRadioSelectChanged(this)" />
-						<label for="star-1" class=" d-inline-flex">
+						<input type="radio" id="star-1-@item.Film.FilmId" value="1" class="d-none" onclick="onRadioSelectChanged(this)" />
+						<label for="star-1-@item.Film.FilmId" class=" d-inline-flex">
 							@if (item.Rating > 0)
 							{
 								<i class="yellow icon d-inline-block bi-star-fill"></i>
@@ -27,8 +27,8 @@
 							}
 						</label>
 
-						<input type="radio" id="star-2" value="2" class="d-none" onclick="onRadioSelectChanged(this)" />
-						<label for="star-2" class=" d-inline-flex">
+						<input type="radio" id="star-2-@item.Film.FilmId" value="2" class="d-none" onclick="onRadioSelectChanged(this)" />
+						<label for="star-2-@item.Film.FilmId" class=" d-inline-flex">
 							@if (item.Rating > 1)
 							{
 								<i class="yellow icon d-inline-block bi-star-fill"></i>
@@ -39,8 +39,8 @@
 							}
 						</label>
 
-						<input type="radio" id="star-3" value="3" class="d-none" onclick="onRadioSelectChanged(this)" />
-						<label for="star-3" class=" d-inline-flex">
+						<input type="radio" id="star-3-@item.Film.FilmId" value="3" class="d-none" onclick="onRadioSelectChanged(this)" />
+						<label for="star-3-@item.Film.FilmId" class=" d-inline-flex">
 							@if (item.Rating > 2)
 							{
 								<i class="yellow icon d-inline-block bi-star-fill"></i>
@@ -51,8 +51,8 @@
 							}
 						</label>
 
-						<input type="radio" id="star-4" value="4" class="d-none" onclick="onRadioSelectChanged(this)" />
-						<label for="star-4" class="d-inline-flex">
+						<input type="radio" id="star-4-@item.Film.FilmId" value="4" class="d-none" onclick="onRadioSelectChanged(this)" />
+						<label for="star-4-@item.Film.FilmId" class="d-inline-flex">
 							@if (item.Rating > 3)
 							{
 								<i class="yellow icon d-inline-block bi-star-fill"></i>
@@ -63,8 +63,8 @@
 							}
 						</label>
 
-						<input type="radio" id="star-5" value="5" class="d-none" onclick="onRadioSelectChanged(this)" />
-						<label for="star-5" class="d-inline-flex">
+						<input type="radio" id="star-5-@item.Film.FilmId" value="5" class="d-none" onclick="onRadioSelectChanged(this)" />
+						<label for="star-5-@item.Film.FilmId" class="d-inline-flex">
 							@if (item.Rating > 4)
 							{
 								<i class="yellow icon d-inline-block bi-star-fill"></i>

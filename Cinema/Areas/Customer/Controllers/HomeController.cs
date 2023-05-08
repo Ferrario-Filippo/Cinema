@@ -42,7 +42,7 @@ namespace Cinema.Areas.Customer.Controllers
 
 			var nextWeek = DateTime.Today.AddDays(14);
 			var filmIds = _unitOfWork.Shows
-				.GetAll(s => s.Time >= DateTime.Today && s.Time < nextWeek)
+				.GetAll(s => s.Time >= DateTime.Now && s.Time < nextWeek)
 				.Select(s => s.FilmId)
 				.Distinct();
 
@@ -73,7 +73,7 @@ namespace Cinema.Areas.Customer.Controllers
 			var ratings = _unitOfWork.Reviews.GetAll(r => r.FilmId == filmId);
 			var avgRating = ratings.Any() ? ratings.Average(r => r.Rating) : 1;
 			var tickets = _unitOfWork.Tickets.GetAll(t => t.UserId == null).GroupBy(t => t.ShowId);
-			var shows = _unitOfWork.Shows.GetAll(s => s.FilmId == filmId && s.Time >= DateTime.Today).ToDictionary(s => s.ShowId);
+			var shows = _unitOfWork.Shows.GetAll(s => s.FilmId == filmId && s.Time >= DateTime.Now).ToDictionary(s => s.ShowId);
 			var rooms = shows.Values.DistinctBy(s => s.RoomId);
 
 			foreach (var group in tickets)

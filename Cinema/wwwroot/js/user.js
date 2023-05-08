@@ -4,16 +4,15 @@ function onRadioSelectChanged(sender) {
 	const value = sender.value;
 
 	var i = 0;
-	console.log(value);
+	console.log(sender.value);
 	for (; i < value; i++) {
 		const starIndex = i * 2 + 1;
 		container.children[starIndex].children[0].classList.remove('bi-star');
-		container.children[starIndex].children[0].classList.add('bi-star-filled');
+		container.children[starIndex].children[0].classList.add('bi-star-fill');
 	}
 	for (; i < 5; i++) {
-		console.log(i);
 		const starIndex = i * 2 + 1;
-		container.children[starIndex].children[0].classList.remove('bi-star-filled');
+		container.children[starIndex].children[0].classList.remove('bi-star-fill');
 		container.children[starIndex].children[0].classList.add('bi-star');
 	}
 
